@@ -1,0 +1,25 @@
+{
+  "name": "itdt-website",
+  "version": "1.0.0",
+  "description": "Website for the DBS IT Development Team",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbsitdt/itdt-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbsitdt/itdt-website/issues"
+  },
+  "homepage": "https://github.com/dbsitdt/itdt-website#readme",
+  "dependencies": {
+    "parcel": "^2.8.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0"
+  }
+}
