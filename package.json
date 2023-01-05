@@ -4,7 +4,8 @@
   "description": "Website for the DBS IT Development Team",
   "main": "index.js",
   "scripts": {
-    "serve": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
