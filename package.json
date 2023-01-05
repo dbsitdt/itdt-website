@@ -2,7 +2,7 @@
   "name": "itdt-website",
   "version": "1.0.0",
   "description": "Website for the DBS IT Development Team",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
