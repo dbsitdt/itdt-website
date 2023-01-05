@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/scss/style.scss" />
+    <script defer src="./src/js/script.js"></script>
     <title>ITDT</title>
   </head>
   <body>
@@ -18,20 +19,80 @@
     <nav>
       <p class="nav-logo"><a href="#">&lt;dbsitdt&gt;</a></p>
       <ul class="nav-list">
-        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#hero">Home</a></li>
         <li class="nav-item"><a href="#">Projects</a></li>
         <li class="nav-item"><a href="#">Photo Gallery</a></li>
         <li class="nav-item"><a href="#">Contact</a></li>
       </ul>
+      <img class="nav-burger-menu" src="./src/images/hamburg.svg" />
     </nav>
     <section id="hero">
-      <h1 class="hero-title">IT Development Team</h1>
-      <a href="#"
-        ><div class="button-primary">
-          <img src="./src/images/Arrow 2.svg" />
-          <p>Projects</p>
-        </div></a
-      >
+      <div class="hero-text">
+        <h1 class="hero-title">IT Development Team</h1>
+        <a href="#"
+          ><div class="button-primary">
+            <img class="button-arrow" src="./src/images/Arrow 2.svg" />
+            <p>Projects</p>
+          </div></a
+        >
+      </div>
+      <div class="hero-img-container">
+        <img
+          class="hero-img"
+          src="./src/images/hero-img1.jpeg"
+          alt="hero-img1"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-perspective="800"
+          data-tilt-reverse="true"
+          data-tilt-glare
+          data-tilt-max-glare="0.8"
+        />
+        <img
+          class="hero-img"
+          src="./src/images/hero-img2.jpeg"
+          alt="hero-img2"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-perspective="800"
+          data-tilt-reverse="true"
+          data-tilt-glare
+          data-tilt-max-glare="0.8"
+        />
+        <img
+          class="hero-img"
+          src="./src/images/hero-img3.jpeg"
+          alt="hero-img3"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-perspective="800"
+          data-tilt-reverse="true"
+          data-tilt-glare
+          data-tilt-max-glare="0.8"
+        />
+        <img
+          class="hero-img"
+          src="./src/images/hero-img4.jpg"
+          alt="hero-img4"
+          data-tilt
+          data-tilt-full-page-listening
+          data-tilt-perspective="800"
+          data-tilt-reverse="true"
+          data-tilt-glare
+          data-tilt-max-glare="0.8"
+        />
+      </div>
     </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"
+      integrity="sha512-K9tDZvc8nQXR1DMuT97sct9f40dilGp97vx7EXjswJA+/mKqJZ8vcZLifZDP+9t08osMLuiIjd4jZ0SM011Q+w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha384-xjP10QrW7PA6WOlPOkWwDcyKJeREvuwWVAc5aS9/ObhcWcdopa9q3l7NXObVJQ8r"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

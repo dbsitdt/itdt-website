@@ -1,4 +1,5 @@
-$gradient: -webkit-linear-gradient(left, #278bff, #28ffed);
+$gradient: -webkit-linear-gradient(48deg, #278bff, #28ffed);
+
 @mixin gradient-text {
   font-size: 72px;
   background: $gradient;

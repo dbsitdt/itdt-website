@@ -1,13 +1,20 @@
 nav {
   display: flex;
   width: 100vw;
+  height: 10vh;
   justify-content: space-between;
   padding: 1.5rem 5rem;
   align-items: center;
+
   .nav-logo {
     font-size: 2rem;
     font-weight: 500;
     color: white;
+    z-index: 3;
+  }
+  .nav-burger-menu {
+    z-index: 3;
+    display: none;
   }
   .nav-list {
     display: flex;
@@ -18,22 +25,61 @@ nav {
       margin-inline: clamp(0.5vw, 10px, 1vw);
       position: relative;
     }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    a::after {
+      content: "";
+      height: 3px;
+      width: 0%;
+      background: $gradient;
+      position: absolute;
+      bottom: -2;
+      left: 0;
+      transition: width ease-out 220ms;
+    }
+    a:hover::after {
+      width: 100%;
+    }
   }
-  a {
-    color: white;
-    text-decoration: none;
+  @media (max-width: 790px) {
+    .nav-list {
+      flex-direction: column;
+      transform: translateY(-100vh);
+      transition: transform 400ms ease-in-out;
+      position: fixed;
+      background: $background;
+      z-index: 2;
+      width: 100vw;
+      left: 0;
+      height: 100vh;
+      top: 0;
+      justify-content: center;
+      .nav-item {
+        margin-inline: 0;
+        margin-bottom: 1rem;
+        a {
+          font-size: 2rem;
+        }
+      }
+    }
+    .nav-burger-menu {
+      display: block;
+    }
   }
-  a::after {
-    content: "";
-    height: 3px;
-    width: 0%;
-    background: $gradient;
-    position: absolute;
-    bottom: -2;
-    left: 0;
-    transition: width ease-out 220ms;
+}
+@media (max-width: 790px) {
+  nav {
+    padding: 2rem 5vw;
+
+    z-index: 3;
   }
-  a:hover::after {
-    width: 100%;
+  nav.active {
+    // position: fixed;
+
+    .nav-list {
+      transform: translateY(0);
+    }
   }
 }

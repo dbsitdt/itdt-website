@@ -9,6 +9,9 @@
   border: solid $border transparent; /* !importanté */
   border-radius: 19px;
   font-size: 1.3rem;
+  .button-arrow {
+    transition: transform 300ms;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -20,5 +23,10 @@
     margin: -$border; /* !importanté */
     border-radius: inherit; /* !importanté */
     background: $gradient;
+  }
+}
+.button-primary:hover {
+  .button-arrow {
+    transform: translateX(8px);
   }
 }
