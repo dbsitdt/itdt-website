@@ -36,7 +36,7 @@ section#photo-grid > div.grid > img {
   background-color: grey;
   object-fit: cover;
   width: 100%;
-  max-height: 100%;
+  height: 100%;
   transition: 300ms transform;
 }
 section#photo-grid > div.grid > img:hover {
