@@ -33,7 +33,7 @@ section#photo-grid {
       grid-row: 2 / span 1;
     }
     img {
-      border-radius: 50px;
+      border-radius: 20px / 20px;
       background-color: grey;
       object-fit: cover;
       width: 100%;
@@ -113,7 +113,7 @@ section#photo-grid {
       grid-row: 4 / span 1;
     }
     img {
-      border-radius: 0;
+      //border-radius: 0;
     }
   }
 }
