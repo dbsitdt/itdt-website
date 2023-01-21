@@ -3,10 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 @import "variable";
 @import "nav";
 @import "button";
 @import "hero";
+@import "gd";
 h1,
 h2,
 h3,
@@ -22,8 +26,7 @@ a {
   text-decoration: inherit;
 }
 body {
-  // background: url(../images/background.webp);
-  background: $background;
+  background: url(../images/background.webp);
   position: relative;
 }
 .blob {
@@ -34,4 +37,18 @@ body {
   border-radius: 100%;
   filter: blur(50px);
   z-index: -2;
+}
+//in dev
+h1.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: white;
+  /*background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+}
+h1.section-title::before {
+  content: "<";
+}
+h1.section-title::after {
+  content: ">";
 }
