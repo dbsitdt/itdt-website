@@ -33,7 +33,7 @@
 .btn-contact {
   border-radius: 2rem; 
   height: 4rem;
-  width: 30vw;
+  width: clamp(10rem, 30vw, 12.5rem);
   font-size: 1.5rem;
   border: 1px solid white;
   background: transparent;
@@ -44,6 +44,7 @@
   padding: 0.6rem 1rem;
   margin: 1rem;
   color: white;
+  cursor: pointer;
   transition: all 300ms ease-in-out;
 }
 .btn-contact > img {
@@ -55,4 +56,7 @@
 .btn-contact:hover {
   background-color: white;
   color: black;
+}
+a:has(.btn-contact) {
+  cursor: default;
 }
