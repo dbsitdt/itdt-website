@@ -38,17 +38,31 @@ body {
   filter: blur(50px);
   z-index: -2;
 }
-//in dev
 h1.section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: white;
-  /*background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;*/
 }
 h1.section-title::before {
   content: "<";
 }
 h1.section-title::after {
   content: ">";
+}
+.attrib {
+  font-size: 5px;
+  animation: att 5s linear infinite;
+}
+@keyframes att{
+  0% {
+    background: red;
+  }
+  50% {
+    background: green;
+  }
+  100% {
+    background: red;
+  }
+}
+section {
+  padding: 5vw;
 }

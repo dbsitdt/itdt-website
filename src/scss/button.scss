@@ -30,3 +30,29 @@
     transform: translateX(8px);
   }
 }
+.btn-contact {
+  border-radius: 2rem; 
+  height: 4rem;
+  width: 30vw;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.6rem 1rem;
+  margin: 1rem;
+  color: white;
+  transition: all 300ms ease-in-out;
+}
+.btn-contact > img {
+  height: 100%;
+  padding: 0;  
+  background-color: white;
+  border-radius: 13px;
+}
+.btn-contact:hover {
+  background-color: white;
+  color: black;
+}
