@@ -1,0 +1,65 @@
+section#contact-us-section {
+  padding: 5vw;
+  .CU-img{
+    max-width: 100%;
+    height: autol;
+    border-radius: 36px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 48.22%, #1E2021 100%), url(.CU-img);
+  }
+  
+  .CU-Message{
+    font-size: 100px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+  }
+  
+  .CU-text{
+    background: linear-gradient(95.89deg, #278BFF 28.87%, #28FFED 97.89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .table-element{
+    border-style: solid;
+    border-color: black;
+    box-sizing: content-box;
+  }
+  
+  .contacts-info-grid{
+    display: grid;
+    grid-template-columns: 8vw 20vw;
+    row-gap: 30px;
+    margin-left: 5px;
+  }
+  
+  .social-media-{
+    padding-left: 5px;
+    border: 2px, 2px, 2px, 0px;
+    border-style: solid;
+    border-color: white;
+    height: 10vh;
+  }
+  
+  .social-media-group{
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    height: 10vh;
+  }
+
+  .social-media-icons{
+    padding-top: 10%;
+    padding-left: 10%;
+  }
+
+  .social-media-texts{
+    font-family: Poppins;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+    font-size: 100%;
+  }
+}
