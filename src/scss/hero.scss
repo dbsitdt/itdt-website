@@ -1,5 +1,6 @@
 #hero {
   gap: 1.5rem;
+
   position: relative;
   .hero-text {
     width: 50vw;
@@ -43,7 +44,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height: 90vh;
+    height: 90dvh;
+
     overflow: hidden;
   }
   .hero-img {

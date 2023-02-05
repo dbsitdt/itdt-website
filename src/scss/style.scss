@@ -12,6 +12,7 @@ html {
 @import "hero";
 @import "gd";
 @import "contactus";
+@import "footer";
 h1,
 h2,
 h3,
@@ -40,16 +41,16 @@ body {
   z-index: -2;
 }
 //in dev
-h1.section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+.section-title {
+  font-size: clamp(3rem, 5vw, 4rem);
   color: white;
   /*background: $gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;*/
 }
-h1.section-title::before {
+.section-title::before {
   content: "<";
 }
-h1.section-title::after {
+.section-title::after {
   content: ">";
 }

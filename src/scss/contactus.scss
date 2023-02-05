@@ -1,65 +1,81 @@
-section#contact-us-section {
+section#contact-us {
+  margin-top: 10vh;
   padding: 5vw;
-  .CU-img{
+  background: linear-gradient(to top, #1e2121 90%, rgba(0, 0, 0, 0));
+  .CU-img {
     max-width: 100%;
-    height: autol;
     border-radius: 36px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 48.22%, #1E2021 100%), url(.CU-img);
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
   }
-  
-  .CU-Message{
-    font-size: 100px;
-    font-family: 'Poppins';
-    font-style: normal;
+
+  .CU-Message {
+    font-family: "Poppins";
     font-weight: 600;
   }
-  
-  .CU-text{
-    background: linear-gradient(95.89deg, #278BFF 28.87%, #28FFED 97.89%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+
+  .CU-title {
+    color: white;
+    font-size: clamp(4rem, 10vw, 8.5rem);
   }
-  
-  .table-element{
+
+  .table-element {
     border-style: solid;
     border-color: black;
     box-sizing: content-box;
   }
-  
-  .contacts-info-grid{
+
+  .contacts-info-grid {
     display: grid;
-    grid-template-columns: 8vw 20vw;
+    grid-template-columns: min(20vw, 8rem) min(70vw, 20rem);
+    grid-template-rows: 1fr 1fr;
     row-gap: 30px;
-    margin-left: 5px;
   }
-  
-  .social-media-{
-    padding-left: 5px;
-    border: 2px, 2px, 2px, 0px;
-    border-style: solid;
-    border-color: white;
-    height: 10vh;
-  }
-  
-  .social-media-group{
+
+  .social-media-group {
     border-width: 2px;
     border-color: white;
     border-style: solid;
-    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    user-select: none;
+    cursor: pointer;
   }
 
-  .social-media-icons{
-    padding-top: 10%;
-    padding-left: 10%;
+  .icon-container {
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    border-right: none;
+    display: grid;
+    user-select: none;
+    padding: 1rem;
+    place-items: center;
+    cursor: pointer;
+  }
+  .icon {
+    display: grid;
+    place-items: center;
+    max-width: 4rem;
   }
 
-  .social-media-texts{
+  .social-media-texts {
     font-family: Poppins;
     font-weight: 500;
     color: white;
-    text-align: center;
-    padding-top: 10%;
-    font-size: 100%;
+    padding-left: 10%;
+    font-size: clamp(1rem, 5vw, 1.4rem);
   }
 }
