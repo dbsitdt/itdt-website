@@ -1,0 +1,81 @@
+section#contact-us {
+  margin-top: 10vh;
+  padding: 5vw;
+  background: linear-gradient(to top, #1e2121 90%, rgba(0, 0, 0, 0));
+  .CU-img {
+    max-width: 100%;
+    border-radius: 36px;
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .CU-Message {
+    font-family: "Poppins";
+    font-weight: 600;
+  }
+
+  .CU-title {
+    color: white;
+    font-size: clamp(4rem, 10vw, 8.5rem);
+  }
+
+  .table-element {
+    border-style: solid;
+    border-color: black;
+    box-sizing: content-box;
+  }
+
+  .contacts-info-grid {
+    display: grid;
+    grid-template-columns: min(20vw, 8rem) min(70vw, 20rem);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 30px;
+  }
+
+  .social-media-group {
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .icon-container {
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    border-right: none;
+    display: grid;
+    user-select: none;
+    padding: 1rem;
+    place-items: center;
+    cursor: pointer;
+  }
+  .icon {
+    display: grid;
+    place-items: center;
+    max-width: 4rem;
+  }
+
+  .social-media-texts {
+    font-family: Poppins;
+    font-weight: 500;
+    color: white;
+    padding-left: 10%;
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+}

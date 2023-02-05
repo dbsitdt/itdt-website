@@ -15,3 +15,6 @@ menuButton.addEventListener("click", () => {
   nav.classList.toggle("active");
   console.log("Hi");
 });
+navList.addEventListener("click", () => {
+  nav.classList.remove("active");
+});
