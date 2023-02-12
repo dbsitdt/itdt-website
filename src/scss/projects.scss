@@ -1,0 +1,53 @@
+#projects-section {
+  padding: 5vw;
+  .project-area {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    .project-text {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+    .project-title {
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 700;
+      margin-bottom: 2vw;
+    }
+    .project-desc {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+    }
+    .button-primary {
+      margin: 0;
+      margin-top: 3vh;
+    }
+    #canvas3d {
+      min-width: 50vw;
+      min-height: 60vh;
+    }
+  }
+  @media (max-width: 1300px) {
+    .project-area #canvas3d {
+      min-height: 50vh;
+      min-width: 50vw;
+    }
+  }
+  @media (max-width: 1008px) {
+    .project-area {
+      flex-direction: column;
+      .project-text {
+        order: 2;
+      }
+      #canvas3d {
+        min-width: 100%;
+      }
+    }
+  }
+  @media (max-width: 678px) {
+    .project-area #canvas3d {
+      min-height: 40vh;
+    }
+  }
+}

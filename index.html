@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/scss/style.scss" />
-    <script defer src="./src/js/script.js"></script>
+    <script defer type="module"src="./src/js/script.js"></script>
     <title>ITDT</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
       <p class="nav-logo"><a href="#">&lt;dbsitdt&gt;</a></p>
       <ul class="nav-list">
         <li class="nav-item"><a href="#hero">Home</a></li>
-        <li class="nav-item"><a href="#">Projects</a></li>
+        <li class="nav-item"><a href="#projects-section">Projects</a></li>
         <li class="nav-item"><a href="#photo-grid">Photo Gallery</a></li>
         <li class="nav-item"><a href="#contact-us">Contact</a></li>
       </ul>
@@ -29,8 +29,9 @@
     <section id="hero">
       <div class="hero-text">
         <h1 class="hero-title">IT Development Team</h1>
-        <a href="#"
+        <a href="#projects-section"
           ><div class="button-primary">
+          
             <img class="button-arrow" src="./src/images/Arrow 2.svg" />
             <p>Projects</p>
           </div></a
@@ -83,9 +84,23 @@
         />
       </div>
     </section>
-
+    <section id="projects-section">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-area">
+        <div class="project-text">
+          <div class="project-title">ITDT Website</div>
+          <p class="project-desc">The ITDT Website was created in January 2023 and was a combination of efforts from many members of the team's web stream, showcasing our work and photos from our past activities</p>
+          <a  target="_blank" href="https://dbsitdt.netlify.app"><div class="button-primary">
+            <img class="button-arrow" src="./src/images/Arrow 2.svg" />
+            <p>Check it out</p>
+          </div>
+        </div>
+      </a>
+        <canvas id="canvas3d"></canvas>
+      </div>
+    </section>
     <section id="photo-grid">
-      <h1 class="section-title">Photos</h1>
+      <h2 class="section-title">Photos</h2>
       <div class="grid">
         <img id="img1" src="./src/images/pic-gd/img1.jpg" alt="#" />
         <img id="img2" src="./src/images/pic-gd/img2.jpg" alt="#" />
