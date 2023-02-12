@@ -28,10 +28,11 @@ app.load("https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode");
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
 
 socialMediaGrid.addEventListener("click", e => {
-  if (!e.target.classList.contains("social-media-group")) return;
-  const socialMediaGroup = e.target.closest(".social-media-group");
+  if (!e.target.closest(".social-media-group")) return;
+  console.log(e.target);
+  const copyText = e.target.querySelector(".social-media-texts") ?? e.target;
+  const socialMediaGroup = copyText.closest(".social-media-group");
   socialMediaGroup.classList.add("copied");
-  const copyText = e.target.querySelector(".social-media-texts");
   navigator.clipboard.writeText(copyText.innerText);
   setTimeout(() => {
     socialMediaGroup.classList.remove("copied");
