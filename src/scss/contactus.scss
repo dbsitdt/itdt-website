@@ -10,7 +10,9 @@ section#contact-us {
     color: white;
     font-size: clamp(4rem, 10vw, 8.5rem);
   }
-
+  .social-media-container {
+    display: flex;
+  }
   .table-element {
     border-style: solid;
     border-color: black;
@@ -19,7 +21,6 @@ section#contact-us {
 
   .contacts-info-grid {
     display: grid;
-    grid-template-columns: min(20vw, 8rem) min(70vw, 20rem);
     grid-template-rows: 1fr 1fr;
     row-gap: 30px;
   }
@@ -31,11 +32,27 @@ section#contact-us {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
+    width: 20rem;
     user-select: none;
+    position: relative;
     cursor: pointer;
+    overflow: hidden;
   }
-
+  .social-media-group .copied-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    clip-path: circle(0px at 100% 100%);
+    background: rgba(255, 255, 255, 0.801);
+    transition: clip-path 300ms linear;
+  }
+  .social-media-group.copied .copied-overlay {
+    clip-path: circle(200% at 100% 100%);
+  }
   .icon-container {
     border-width: 2px;
     border-color: white;
@@ -59,5 +76,10 @@ section#contact-us {
     color: white;
     padding-left: 10%;
     font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+  @media (max-width: 446px) {
+    .social-media-group {
+      width: 100%;
+    }
   }
 }
