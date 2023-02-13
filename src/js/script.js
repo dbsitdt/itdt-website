@@ -21,10 +21,32 @@ navList.addEventListener("click", () => {
   nav.classList.remove("active");
 });
 import { Application } from "@splinetool/runtime";
+import Scrambler from "scrambling-text";
 
 const canvas = document.getElementById("canvas3d");
 const app = new Application(canvas);
 app.load("https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode");
+// create an instance of Scrambler.
+const scrambler = new Scrambler();
+const handleScramble = text => {
+  const loaderText = document.querySelector(".loader-text");
+  loaderText.innerText = text;
+};
+const characters = [
+  ...Scrambler.CHARACTERS.DEFAULT,
+  ...Scrambler.CHARACTERS.ALPHABET,
+  "<",
+  ">",
+];
+scrambler.scramble("IT Development Team", handleScramble, {
+  characters: characters,
+});
+const loader = document.querySelector("#loader");
+window.addEventListener("load", function () {
+  this.setTimeout(function () {
+    loader.classList.add("finish");
+  }, 2000);
+});
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
 
 socialMediaGrid.addEventListener("click", e => {

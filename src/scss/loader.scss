@@ -1,0 +1,24 @@
+#loader {
+  background: $background;
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 900ms;
+  .loader-logo {
+    width: 15%;
+    fill: $primary-color;
+  }
+  .loader-text {
+    font-size: clamp(1rem, 7vw, 3rem);
+    color: white;
+  }
+}
+#loader.finish {
+  transform: translateY(-100vh);
+}

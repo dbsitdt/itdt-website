@@ -20,7 +20,9 @@
   "dependencies": {
     "@splinetool/runtime": "^0.9.211",
     "parcel": "^2.8.0",
-    "vanilla-tilt": "^1.8.0"
+    "scrambling-text": "^1.2.0",
+    "vanilla-tilt": "^1.8.0",
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.0",
