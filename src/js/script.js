@@ -45,7 +45,7 @@ const loader = document.querySelector("#loader");
 window.addEventListener("load", function () {
   this.setTimeout(function () {
     loader.classList.add("finish");
-  }, 3000);
+  }, 3500);
 });
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
 
