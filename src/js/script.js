@@ -44,9 +44,60 @@ scrambler.scramble("IT Development Team", handleScramble, {
 const loader = document.querySelector("#loader");
 window.addEventListener("load", function () {
   this.setTimeout(function () {
-    loader.classList.add("finish");
+    gsap.to(".loader-logo", {
+      duration: 1.2,
+      transform: "translateY(-100vh)",
+    });
+    gsap.to(".loader-text", {
+      duration: 1.3,
+      transform: "translateY(-100vh)",
+    });
+    gsap.to("#loader", {
+      duration: 1.4,
+      transform: "translateY(-100vh)",
+    });
+    const tl = gsap.timeline();
+    tl.from(
+      ".hero-title",
+      {
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        delay: 0.5,
+      },
+      "begin"
+    );
+    tl.from(
+      ".hero-img",
+      {
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        delay: 0.5,
+      },
+      "begin"
+    );
+    tl.from(
+      ".hero-btn",
+      {
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        delay: 0.5,
+      },
+      "begin"
+    );
+    tl.from(".nav-item", {
+      y: -10,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.1,
+      delay: 0.1,
+    });
   }, 3500);
 });
+
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
 
 socialMediaGrid.addEventListener("click", e => {
@@ -60,3 +111,36 @@ socialMediaGrid.addEventListener("click", e => {
     socialMediaGroup.classList.remove("copied");
   }, 1000);
 });
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.from(".projects-title", {
+  scrollTrigger: { trigger: ".projects-title" },
+  x: -100,
+  opacity: 0,
+  duration: 0.7,
+});
+gsap.from(".gd-title", {
+  scrollTrigger: { trigger: ".gd-title" },
+  x: -100,
+  opacity: 0,
+  duration: 0.7,
+});
+gsap.from(".CU-title", {
+  scrollTrigger: { trigger: ".CU-title" },
+  x: -100,
+  opacity: 0,
+  duration: 0.7,
+});
+gsap.from(".contacts-info-grid", {
+  scrollTrigger: { trigger: ".contacts-info-grid" },
+  y: 100,
+  opacity: 0,
+  duration: 0.7,
+});
+
+// gsap.from(`.grid img`, {
+//   // scrollTrigger: { trigger: `.grid` },
+//   scale: 0,
+//   stagger: 0.3,
+//   duration: 1,
+// });

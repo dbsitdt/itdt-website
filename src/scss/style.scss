@@ -33,6 +33,7 @@ a {
 body {
   background: $background;
   position: relative;
+  overflow-x: hidden;
 }
 .blob {
   position: fixed;
