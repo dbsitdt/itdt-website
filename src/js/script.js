@@ -49,11 +49,11 @@ window.addEventListener("load", function () {
       transform: "translateY(-100vh)",
     });
     gsap.to(".loader-text", {
-      duration: 1.4,
+      duration: 1.6,
       transform: "translateY(-100vh)",
     });
     gsap.to("#loader", {
-      duration: 1.6,
+      duration: 1.8,
       transform: "translateY(-100vh)",
     });
     const tl = gsap.timeline();
