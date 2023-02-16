@@ -50,10 +50,12 @@ window.addEventListener("load", function () {
     });
     gsap.to(".loader-text", {
       duration: 1.6,
+      delay: 0.2,
       transform: "translateY(-100vh)",
     });
     gsap.to("#loader", {
       duration: 1.8,
+      delay: 0.2,
       transform: "translateY(-100vh)",
     });
     const tl = gsap.timeline();
