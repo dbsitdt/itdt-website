@@ -49,11 +49,11 @@ window.addEventListener("load", function () {
       transform: "translateY(-100vh)",
     });
     gsap.to(".loader-text", {
-      duration: 1.3,
+      duration: 1.4,
       transform: "translateY(-100vh)",
     });
     gsap.to("#loader", {
-      duration: 1.4,
+      duration: 1.6,
       transform: "translateY(-100vh)",
     });
     const tl = gsap.timeline();
@@ -63,7 +63,17 @@ window.addEventListener("load", function () {
         y: -10,
         opacity: 0,
         duration: 0.4,
-        delay: 0.5,
+        delay: 0.6,
+      },
+      "begin"
+    );
+    tl.from(
+      ".hero-btn",
+      {
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        delay: 0.7,
       },
       "begin"
     );
@@ -74,17 +84,7 @@ window.addEventListener("load", function () {
         opacity: 0,
         duration: 0.4,
         stagger: 0.1,
-        delay: 0.5,
-      },
-      "begin"
-    );
-    tl.from(
-      ".hero-btn",
-      {
-        y: -10,
-        opacity: 0,
-        duration: 0.4,
-        delay: 0.5,
+        delay: 0.7,
       },
       "begin"
     );
