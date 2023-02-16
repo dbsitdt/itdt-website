@@ -31,8 +31,10 @@ a {
   text-decoration: inherit;
 }
 body {
-  background: $background;
+  background: var(--background);
   position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
 }
 .blob {

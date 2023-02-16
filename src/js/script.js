@@ -16,6 +16,13 @@ const navList = document.querySelector(".nav-list");
 const nav = document.querySelector("nav");
 menuButton.addEventListener("click", () => {
   nav.classList.toggle("active");
+  // gsap.from(".nav-list .nav-item", {
+  //   x: -10,
+  //   opacity: 0,
+  //   duration: 0.3,
+  //   stagger: 0.1,
+  //   delay: 0.5,
+  // });
 });
 navList.addEventListener("click", () => {
   nav.classList.remove("active");
@@ -41,6 +48,7 @@ const characters = [
 scrambler.scramble("IT Development Team", handleScramble, {
   characters: characters,
 });
+gsap.registerPlugin(ScrollTrigger);
 const loader = document.querySelector("#loader");
 window.addEventListener("load", function () {
   this.setTimeout(function () {
@@ -95,7 +103,7 @@ window.addEventListener("load", function () {
       stagger: 0.1,
       delay: 0.1,
     });
-  }, 3500);
+  }, 0);
 });
 
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
@@ -112,7 +120,6 @@ socialMediaGrid.addEventListener("click", e => {
   }, 1000);
 });
 
-gsap.registerPlugin(ScrollTrigger);
 gsap.from(".projects-title", {
   scrollTrigger: { trigger: ".projects-title" },
   x: -100,
@@ -136,6 +143,28 @@ gsap.from(".contacts-info-grid", {
   y: 100,
   opacity: 0,
   duration: 0.7,
+});
+gsap.from("#ITDTWebsite", {
+  scrollTrigger: { trigger: "#ITDTWebsite" },
+  x: -100,
+  opacity: 0,
+  duration: 0.7,
+});
+const projectContainer = gsap.utils.toArray(".project-container");
+projectContainer.forEach(project => {
+  gsap.to("body", {
+    scrollTrigger: {
+      trigger: `#${project.id}`,
+      start: "top center",
+      end: "bottom center",
+      marker: true,
+
+      toggleActions: "play reverse play reverse",
+    },
+    background: `${project.dataset.bgcolor}`,
+
+    duration: 0.3,
+  });
 });
 
 // gsap.from(`.grid img`, {

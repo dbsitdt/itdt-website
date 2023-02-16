@@ -1,41 +1,50 @@
 #projects-section {
   padding: 5vw;
   .project-area {
+    margin-block: 3vh;
     color: white;
     display: flex;
     align-items: center;
-    gap: 5vw;
-    .project-text {
+    .project-container {
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
-    }
-    .project-title {
-      font-size: clamp(3rem, 5vw, 5rem);
-      font-weight: 700;
-      margin-bottom: 2vw;
-    }
-    .project-desc {
-      font-size: clamp(1rem, 1.5vw, 1.2rem);
-    }
-    .button-primary {
-      margin: 0;
-      margin-top: 3vh;
-    }
-    #canvas3d {
-      min-width: 55vw;
-      min-height: 65vh;
+      align-items: center;
+
+      .project-text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+      .project-num {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.712);
+      }
+      .project-title {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        font-weight: 700;
+        margin-bottom: 2vw;
+      }
+      .project-desc {
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+      }
+      .button-primary {
+        margin: 0;
+        margin-top: 3vh;
+      }
+      #canvas3d {
+        min-width: 45vw;
+        min-height: 60vh;
+      }
     }
   }
   @media (max-width: 1300px) {
-    .project-area #canvas3d {
-      min-height: 50vh;
-      min-width: 50vw;
+    .project-area .project-container #canvas3d {
+      min-height: 40vw;
+      min-width: 60vw;
     }
   }
   @media (max-width: 1008px) {
-    .project-area {
+    .project-area .project-container {
       flex-direction: column;
       .project-text {
         order: 2;
@@ -46,7 +55,7 @@
     }
   }
   @media (max-width: 678px) {
-    .project-area #canvas3d {
+    .project-container #canvas3d {
       min-height: 40vh;
     }
   }
