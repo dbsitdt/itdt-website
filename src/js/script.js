@@ -45,17 +45,17 @@ const loader = document.querySelector("#loader");
 window.addEventListener("load", function () {
   this.setTimeout(function () {
     gsap.to(".loader-logo", {
-      duration: 1.2,
+      duration: 1,
       transform: "translateY(-100vh)",
     });
     gsap.to(".loader-text", {
-      duration: 1.6,
-      delay: 0.2,
+      duration: 1.4,
+      delay: 0.05,
       transform: "translateY(-100vh)",
     });
     gsap.to("#loader", {
-      duration: 1.8,
-      delay: 0.2,
+      duration: 1.6,
+      delay: 0.05,
       transform: "translateY(-100vh)",
     });
     const tl = gsap.timeline();
