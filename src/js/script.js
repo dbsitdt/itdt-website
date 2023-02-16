@@ -103,7 +103,7 @@ window.addEventListener("load", function () {
       stagger: 0.1,
       delay: 0.1,
     });
-  }, 0);
+  }, 3200);
 });
 
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
@@ -122,19 +122,16 @@ socialMediaGrid.addEventListener("click", e => {
 
 gsap.from(".projects-title", {
   scrollTrigger: { trigger: ".projects-title" },
-  x: -100,
   opacity: 0,
   duration: 0.7,
 });
 gsap.from(".gd-title", {
   scrollTrigger: { trigger: ".gd-title" },
-  x: -100,
   opacity: 0,
   duration: 0.7,
 });
 gsap.from(".CU-title", {
   scrollTrigger: { trigger: ".CU-title" },
-  x: -100,
   opacity: 0,
   duration: 0.7,
 });
@@ -144,14 +141,14 @@ gsap.from(".contacts-info-grid", {
   opacity: 0,
   duration: 0.7,
 });
-gsap.from("#ITDTWebsite", {
-  scrollTrigger: { trigger: "#ITDTWebsite" },
-  x: -100,
-  opacity: 0,
-  duration: 0.7,
-});
+
 const projectContainer = gsap.utils.toArray(".project-container");
 projectContainer.forEach(project => {
+  gsap.from(`#${project.id}`, {
+    scrollTrigger: { trigger: `#${project.id}` },
+    opacity: 0,
+    duration: 0.7,
+  });
   gsap.to("body", {
     scrollTrigger: {
       trigger: `#${project.id}`,
@@ -164,8 +161,8 @@ projectContainer.forEach(project => {
     background: `${project.dataset.bgcolor}`,
 
     duration: 0.3,
-  });
-});
+  })`#${project.id}`;
+})`#${project.id}`;
 
 // gsap.from(`.grid img`, {
 //   // scrollTrigger: { trigger: `.grid` },
