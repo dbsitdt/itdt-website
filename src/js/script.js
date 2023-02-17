@@ -161,9 +161,20 @@ projectContainer.forEach(project => {
     background: `${project.dataset.bgcolor}`,
 
     duration: 0.3,
-  })`#${project.id}`;
-})`#${project.id}`;
-
+  });
+});
+gsap.to("[data-speed]", {
+  y: (i, el) =>
+    (1 - parseFloat(el.getAttribute("data-speed"))) *
+    ScrollTrigger.maxScroll(window),
+  ease: "none",
+  scrollTrigger: {
+    start: 0,
+    end: "max",
+    invalidateOnRefresh: true,
+    scrub: 0,
+  },
+});
 // gsap.from(`.grid img`, {
 //   // scrollTrigger: { trigger: `.grid` },
 //   scale: 0,
