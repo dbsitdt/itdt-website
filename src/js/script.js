@@ -1,9 +1,11 @@
+import scrambleImages from "./photos.js";
+scrambleImages();
 gsap.set(".blob", { xPercent: -50, yPercent: -50 });
 const blob = document.querySelector(".blob");
 let mouseX;
 let mouseY;
 
-window.addEventListener("mousemove", e => {
+window.addEventListener("mousemove", (e) => {
   if (window.innerWidth > 600) {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -35,7 +37,7 @@ const app = new Application(canvas);
 app.load("https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode");
 // create an instance of Scrambler.
 const scrambler = new Scrambler();
-const handleScramble = text => {
+const handleScramble = (text) => {
   const loaderText = document.querySelector(".loader-text");
   loaderText.innerText = text;
 };
@@ -108,7 +110,7 @@ window.addEventListener("load", function () {
 
 const socialMediaGrid = document.querySelector(".contacts-info-grid");
 
-socialMediaGrid.addEventListener("click", e => {
+socialMediaGrid.addEventListener("click", (e) => {
   if (!e.target.closest(".social-media-group")) return;
   console.log(e.target);
   const copyText = e.target.querySelector(".social-media-texts") ?? e.target;
@@ -143,7 +145,7 @@ gsap.from(".contacts-info-grid", {
 });
 
 const projectContainer = gsap.utils.toArray(".project-container");
-projectContainer.forEach(project => {
+projectContainer.forEach((project) => {
   gsap.from(`#${project.id}`, {
     scrollTrigger: { trigger: `#${project.id}` },
     opacity: 0,
@@ -181,3 +183,6 @@ gsap.to("[data-speed]", {
 //   stagger: 0.3,
 //   duration: 1,
 // });
+setInterval(() => {
+  scrambleImages();
+}, 10000);
