@@ -1,14 +1,14 @@
-import img1 from "../images/pic-gd/img1.webp";
-import img2 from "../images/pic-gd/img2.webp";
-import img3 from "../images/pic-gd/img3.webp";
-import img4 from "../images/pic-gd/img4.webp";
-import img5 from "../images/pic-gd/img5.webp";
-import img6 from "../images/pic-gd/img6.webp";
-import img7 from "../images/pic-gd/img7.webp";
-import img8 from "../images/pic-gd/img8.webp";
-import img9 from "../images/pic-gd/img9.webp";
-import img10 from "../images/pic-gd/img10.webp";
-import img11 from "../images/pic-gd/img11.webp";
+import img1 from "../images/pic-gd/img1.jpg";
+import img2 from "../images/pic-gd/img2.jpg";
+import img3 from "../images/pic-gd/img3.jpg";
+import img4 from "../images/pic-gd/img4.jpg";
+import img5 from "../images/pic-gd/img5.jpg";
+import img6 from "../images/pic-gd/img6.jpg";
+import img7 from "../images/pic-gd/img7.jpg";
+import img8 from "../images/pic-gd/img8.jpg";
+import img9 from "../images/pic-gd/img9.jpg";
+import img10 from "../images/pic-gd/img10.jpg";
+import img11 from "../images/pic-gd/img11.jpg";
 let aff = "sec";
 const scrambleImages = function () {
   const arr = [
@@ -29,6 +29,7 @@ const scrambleImages = function () {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   const imgAc = document.querySelectorAll(".gd-img-" + aff);
+  console.log(aff === "sec" ? "fir" : "sec");
   const imgNAc = document.querySelectorAll(
     `.gd-img-${aff === "sec" ? "fir" : "sec"}`
   );
