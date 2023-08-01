@@ -1,0 +1,12 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router.js";
+import store from "./store/index.js";
+import BaseCTAButton from "./components/ui/BaseCTAButton";
+import BaseSection from "./components/ui/BaseSection";
+const app = createApp(App);
+app.use(router);
+app.use(store);
+app.component("base-cta-button", BaseCTAButton);
+app.component("base-section", BaseSection);
+app.mount("#app");
