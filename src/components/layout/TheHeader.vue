@@ -7,7 +7,7 @@
         <router-link to="/#projects-section">Projects</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="/#events">Photo Gallery</router-link>
+        <router-link to="/#events">Events</router-link>
       </li>
       <li class="nav-item">
         <router-link to="/#contact-us">Contact</router-link>
