@@ -22,6 +22,10 @@ const router = createRouter({
       };
     }
   },
+  beforeRouteEnter() {
+    this.$store.dispatch("changeLoading", true);
+    this.$store.dispatch("changeLoading", false);
+  },
 });
 
 export default router;

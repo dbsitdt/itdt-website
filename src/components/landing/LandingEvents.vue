@@ -30,10 +30,27 @@
   </section>
 </template>
 <script>
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 export default {
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(
+      ".photo",
+      {
+        scrollTrigger: { trigger: ".gd-title" },
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        delay: 0.7,
+      },
+      "begin"
+    );
+  },
   methods: {
     handleEnter(str) {
-      console.log(str);
       this.$store.dispatch("changeCursorText", str);
     },
     handleLeave() {
@@ -66,7 +83,7 @@ export default {
 }
 
 .photo:nth-of-type(1) {
-  background-image: url("../../assets/events/events-landing1.jpg");
+  background-image: url("../../assets/events/events-landing1.webp");
 }
 .photo:nth-of-type(2) {
   background-image: url("../../assets/events/events-landing2.webp");
@@ -75,7 +92,7 @@ export default {
   background-image: url("../../assets/events/events-landing3.webp");
 }
 .photo:nth-of-type(4) {
-  background-image: url("../../assets/events/events-landing4.jpg");
+  background-image: url("../../assets/events/events-landing4.webp");
 }
 .photo:hover {
   flex: 2;
@@ -84,6 +101,9 @@ export default {
   .photo-container {
     flex-direction: column;
     height: 90vh;
+  }
+  .photo {
+    cursor: pointer;
   }
 }
 </style>

@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
+      isLoading: false,
       cursorText: "",
       eventsList: [
         {
@@ -11,12 +12,12 @@ const store = createStore({
             "Our team visited the Hong Kong Institute of Vocational Education in Chun Wan to explore the latest advancements in technology. The team members were given a tour of the campus and shown the latest VR technology used for software development, as well as its practical applications as software products in various fields. They also took part in an introductory workshop where they utilized IoT technology to program a weather application, utilizing sensors and controllers to obtain real-time data. In addition, members also joined a workshop about the importance of cybersecurity and safety, especially in an increasingly tech-driven world. The field trip was a success and provided valuable experience for the team members about the practical use of technology.",
           date: "November 2022",
           images: [
-            "ive1.jpg",
-            "ive2.jpg",
-            "ive3.jpg",
-            "ive4.jpg",
-            "ive5.jpg",
-            "ive6.jpg",
+            "ive1.webp",
+            "ive2.webp",
+            "ive3.webp",
+            "ive4.webp",
+            "ive5.webp",
+            "ive6.webp",
           ],
         },
         {
@@ -71,10 +72,16 @@ const store = createStore({
     changeCursorText(context, payload) {
       context.commit("editCursorText", payload);
     },
+    changeLoading(context, loading) {
+      context.commit("setLoading", loading);
+    },
   },
   mutations: {
     editCursorText(state, payload) {
       state.cursorText = payload;
+    },
+    setLoading(state, loading) {
+      state.loading = loading;
     },
   },
   getters: {
@@ -83,6 +90,9 @@ const store = createStore({
     },
     getEventsList(state) {
       return state.eventsList;
+    },
+    getLoadingStatus(state) {
+      return state.isLoading;
     },
   },
 });

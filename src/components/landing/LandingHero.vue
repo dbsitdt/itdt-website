@@ -10,28 +10,28 @@
       <Tilt class="hero-img-box" :options="tiltOptions">
         <img
           class="hero-img"
-          src="../../assets/hero-img1.jpeg"
+          src="../../assets/hero-img1.webp"
           alt="hero-img1"
         />
       </Tilt>
       <Tilt class="hero-img-box" :options="tiltOptions">
         <img
           class="hero-img"
-          src="../../assets/hero-img2.jpeg"
+          src="../../assets/hero-img2.webp"
           alt="hero-img2"
         />
       </Tilt>
       <Tilt class="hero-img-box" :options="tiltOptions">
         <img
           class="hero-img"
-          src="../../assets/hero-img3.jpeg"
+          src="../../assets/hero-img3.webp"
           alt="hero-img3"
         />
       </Tilt>
       <Tilt class="hero-img-box" :options="tiltOptions">
         <img
           class="hero-img"
-          src="../../assets/hero-img4.jpg"
+          src="../../assets/hero-img4.webp"
           alt="hero-img4"
         />
       </Tilt>
@@ -46,6 +46,39 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
+    // gsap.from(
+    //   ".hero-title",
+    //   {
+    //     y: -10,
+    //     opacity: 0,
+    //     duration: 0.4,
+    //     delay: 0.6,
+    //   },
+    //   "begin"
+    // );
+    // gsap.from(
+    //   ".hero-btn",
+    //   {
+    //     y: -10,
+    //     opacity: 0,
+    //     duration: 0.4,
+    //     delay: 0.7,
+    //   },
+    //   "begin"
+    // );
+    // gsap.from(
+    //   ".hero-img",
+    //   {
+    //     y: -10,
+    //     opacity: 0,
+    //     duration: 0.4,
+    //     stagger: 0.1,
+    //     delay: 0.7,
+    //   },
+    //   "begin"
+    // );
+    // console.log(this.$store.state.initialTl);
+    // console.log("Added to the hero");
     gsap.to(".hero-text", {
       scrollTrigger: {
         trigger: "html",

@@ -2,14 +2,16 @@
   <nav ref="nav">
     <p class="nav-logo"><router-link to="/">&lt;dbsitdt&gt;</router-link></p>
     <ul class="nav-list">
-      <li class="nav-item"><router-link to="/#hero">Home</router-link></li>
-      <li class="nav-item">
+      <li class="nav-item" @click="removeMenu">
+        <router-link to="/#hero">Home</router-link>
+      </li>
+      <li class="nav-item" @click="removeMenu">
         <router-link to="/#projects-section">Projects</router-link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" @click="removeMenu">
         <router-link to="/#events">Events</router-link>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" @click="removeMenu">
         <router-link to="/#contact-us">Contact</router-link>
       </li>
     </ul>
@@ -21,16 +23,17 @@
   </nav>
 </template>
 <script>
-import { gsap } from "gsap";
+// import gsap from "gsap";
 export default {
   mounted() {
-    gsap.from(".nav-item", {
-      y: -10,
-      opacity: 0,
-      duration: 0.3,
-      stagger: 0.1,
-      delay: 0.1,
-    });
+    // gsap.from(".nav-item", {
+    //   y: -10,
+    //   opacity: 0,
+    //   duration: 0.3,
+    //   stagger: 0.1,
+    //   delay: 0.1,
+    // });
+    // console.log("Added to nav");
   },
   methods: {
     toggleMenu() {

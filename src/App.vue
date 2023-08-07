@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import TheHeader from "./components/layout/TheHeader.vue";
 import TheBlob from "./components/layout/TheBlob.vue";
 import TheFooter from "./components/layout/TheFooter.vue";
 import TheCursor from "./components/layout/TheCursor.vue";
 import TheLoader from "./components/layout/TheLoader.vue";
+import TheHeader from "./components/layout/TheHeader.vue";
 import { gsap } from "gsap";
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -44,9 +44,14 @@ export default {
     cursorText() {
       return this.$store.getters.getCursorText;
     },
+    isLoading() {
+      return this.$store.state.isLoading;
+    },
   },
+
   async mounted() {
     // const blob = this.$refs.blob;
+
     gsap.set(".blob", { xPercent: -50, yPercent: -50 });
     gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
@@ -64,6 +69,8 @@ export default {
       transform: "translateY(-100vh)",
     });
     this.$emit("finishedLoader");
+    // this.$store.state.initialTl.play();
+    // console.log("PLAYED TL");
   },
   methods: {
     mousemove(e) {

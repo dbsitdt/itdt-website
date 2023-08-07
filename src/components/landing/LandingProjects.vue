@@ -19,22 +19,24 @@
             >Check it out</base-cta-button
           >
         </div>
-        <canvas ref="canvas3d" id="canvas3d"></canvas>
+        <video autoplay loop muted playsinline id="canvas3d">
+          <source src="../../assets/projects/projects-dbsitdt.webm" />
+        </video>
       </div>
     </div>
   </section>
 </template>
 <script>
-import { Application } from "@splinetool/runtime";
+// import { Application } from "@splinetool/runtime";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   async mounted() {
-    const canvas = this.$refs.canvas3d;
-    const app = new Application(canvas);
-    await app.load(
-      "https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode"
-    );
+    // const canvas = this.$refs.canvas3d;
+    // const app = new Application(canvas);
+    // await app.load(
+    //   "https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode"
+    // );
 
     gsap.registerPlugin(ScrollTrigger);
     const projectContainer = gsap.utils.toArray(".project-container");
@@ -99,8 +101,7 @@ export default {
   margin-top: 3vh;
 }
 #canvas3d {
-  min-width: 45vw;
-  min-height: 60vh;
+  max-height: 60vh;
 }
 @media (max-width: 1300px) {
   .project-area .project-container #canvas3d {
@@ -116,7 +117,7 @@ export default {
     order: 2;
   }
   #canvas3d {
-    min-width: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 678px) {
