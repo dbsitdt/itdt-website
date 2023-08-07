@@ -19,9 +19,14 @@
             >Check it out</base-cta-button
           >
         </div>
-        <video autoplay loop muted playsinline id="canvas3d">
-          <source src="../../assets/projects/projects-dbsitdt.webm" />
-        </video>
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          id="canvas3d"
+          src="../../assets/projects/projects-dbsitdt.webm"
+        ></video>
       </div>
     </div>
   </section>
