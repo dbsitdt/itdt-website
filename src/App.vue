@@ -58,15 +58,15 @@ export default {
     await delay(4000);
     gsap.to(".loader-logo", {
       duration: 1,
-      transform: "translateY(-100vh)",
+      transform: "translateY(-150vh)",
     });
     gsap.to(".loader-text", {
       duration: 1.4,
-      transform: "translateY(-100vh)",
+      transform: "translateY(-150vh)",
     });
     gsap.to("#loader", {
       duration: 1.6,
-      transform: "translateY(-100vh)",
+      transform: "translateY(-150vh)",
     });
     this.$emit("finishedLoader");
     // this.$store.state.initialTl.play();
@@ -120,7 +120,6 @@ a {
 body {
   background: var(--background);
   position: relative;
-  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }

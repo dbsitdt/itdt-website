@@ -211,7 +211,7 @@ export default {
   top: 12vh;
   right: 9vw;
 }
-@media (max-width: 1240px) {
+@media (max-width: 1240px) or (max-height: 800px) {
   .hero-img-box:nth-of-type(1) {
     left: 5vw;
     width: 35vw;
@@ -230,7 +230,7 @@ export default {
     width: 35vw;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 500px) or (max-height: 800px) {
   .hero-img-box:nth-of-type(1) {
     height: 80%;
     width: 80%;
@@ -249,8 +249,6 @@ export default {
   .hero-img-box:nth-of-type(4) {
     display: none;
   }
-}
-@media (max-width: 500px) {
   .hero-img-container {
     display: flex;
     justify-content: center;

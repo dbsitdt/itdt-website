@@ -19,14 +19,20 @@
             >Check it out</base-cta-button
           >
         </div>
-        <video
+        <img
+          id="canvas3d"
+          src="../../assets/projects/projects-dbsitdt.png"
+          alt="dbsitdt"
+          draggable="false"
+        />
+        <!-- <video
           autoplay
           loop
           muted
           playsinline
           id="canvas3d"
           src="../../assets/projects/projects-dbsitdt.webm"
-        ></video>
+        ></video> -->
       </div>
     </div>
   </section>
