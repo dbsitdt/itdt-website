@@ -71,6 +71,9 @@ export default {
       });
     });
   },
+  beforeUnmount() {
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  },
 };
 </script>
 <style scoped>

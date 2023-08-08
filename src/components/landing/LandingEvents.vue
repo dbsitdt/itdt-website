@@ -34,6 +34,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default {
+  beforeUnmount() {
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(

@@ -89,6 +89,9 @@ export default {
       ease: "none",
     });
   },
+  beforeUnmount() {
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  },
   data() {
     return {
       tiltOptions: {
