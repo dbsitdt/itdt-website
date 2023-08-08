@@ -136,15 +136,15 @@ export default {
 <style scoped>
 h4 {
   color: white;
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(2.5rem, 4vw, 4rem);
 }
 p {
   color: white;
   line-height: 1.5;
-  font-size: 1.2rem;
+  font-size: clamp(1.05rem, 3vw, 1.2rem);
 }
 p.date {
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
   margin-bottom: 1rem;
 }
 

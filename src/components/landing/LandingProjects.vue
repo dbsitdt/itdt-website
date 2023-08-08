@@ -21,7 +21,7 @@
         </div>
         <img
           id="canvas3d"
-          src="../../assets/projects/projects-dbsitdt.png"
+          src="../../assets/projects/projects-dbsitdt-new.png"
           alt="dbsitdt"
           draggable="false"
         />

@@ -3,7 +3,7 @@
     <p class="nav-logo"><router-link to="/">&lt;dbsitdt&gt;</router-link></p>
     <ul class="nav-list">
       <li class="nav-item" @click="removeMenu">
-        <router-link to="/#hero">Home</router-link>
+        <router-link to="/">Home</router-link>
       </li>
       <li class="nav-item" @click="removeMenu">
         <router-link to="/#projects-section">Projects</router-link>
