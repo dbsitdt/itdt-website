@@ -69,6 +69,27 @@ export default {
       transform: "translateY(-150vh)",
     });
     this.$emit("finishedLoader");
+    const tl = gsap.timeline();
+
+    tl.from(
+      ".hero-img-box",
+      {
+        y: -10,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        delay: 0.7,
+      },
+      "begin"
+    );
+    tl.from(".nav-item", {
+      y: -10,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.1,
+      delay: 0.1,
+    });
+    console.log("Added to nav");
     // this.$store.state.initialTl.play();
     // console.log("PLAYED TL");
   },
@@ -120,7 +141,6 @@ a {
 body {
   background: var(--background);
   position: relative;
-  height: 100vh;
   overflow-x: hidden;
 }
 .route-enter-from {

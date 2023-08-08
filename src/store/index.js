@@ -2,6 +2,7 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
+      bgColor: "#1e2121",
       isLoading: false,
       cursorText: "",
       eventsList: [

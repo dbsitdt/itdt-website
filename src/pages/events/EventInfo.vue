@@ -4,12 +4,79 @@
     <p class="date">{{ date }}</p>
     <p>{{ description }}</p>
     <div class="grid">
-      <img id="img1" :src="getImgUrl(imgList[0])" class="gd-img" alt="#" />
-      <img id="img2" :src="getImgUrl(imgList[1])" class="gd-img" alt="#" />
-      <img id="img3" :src="getImgUrl(imgList[2])" class="gd-img" alt="#" />
-      <img id="img4" :src="getImgUrl(imgList[3])" class="gd-img" alt="#" />
-      <img id="img5" :src="getImgUrl(imgList[4])" class="gd-img" alt="#" />
-      <img id="img6" :src="getImgUrl(imgList[5])" class="gd-img" alt="#" />
+      <img
+        id="img1"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[0],
+            true
+          )}) 0% 0% / cover no-repeat`,
+          backdropFilter: 'blur(20px)',
+        }"
+        :src="getImgUrl(imgList[0])"
+        class="gd-img"
+        alt="#"
+      />
+      <img
+        id="img2"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[1],
+            true
+          )}) 0% 0% / cover no-repeat`,
+        }"
+        :src="getImgUrl(imgList[1])"
+        class="gd-img"
+        alt="#"
+      />
+      <img
+        id="img3"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[2],
+            true
+          )}) 0% 0% / cover no-repeat`,
+        }"
+        :src="getImgUrl(imgList[2])"
+        class="gd-img"
+        alt="#"
+      />
+      <img
+        id="img4"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[3],
+            true
+          )}) 0% 0% / cover no-repeat`,
+        }"
+        :src="getImgUrl(imgList[3])"
+        class="gd-img"
+        alt="#"
+      />
+      <img
+        id="img5"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[4],
+            true
+          )}) 0% 0% / cover no-repeat`,
+        }"
+        :src="getImgUrl(imgList[4])"
+        class="gd-img"
+        alt="#"
+      />
+      <img
+        id="img6"
+        :style="{
+          background: `url(${getImgUrl(
+            imgList[5],
+            true
+          )}) 0% 0% / cover no-repeat`,
+        }"
+        :src="getImgUrl(imgList[5])"
+        class="gd-img"
+        alt="#"
+      />
     </div>
   </base-section>
 </template>
@@ -39,11 +106,26 @@ export default {
     },
   },
   methods: {
-    getImgUrl(path) {
+    getImgUrl(path, small = false) {
+      if (small) path = this.convertToSmallWebP(path);
       const images = require(`../../assets/events/${this.selectedEvent.id}/${path}`);
+
       return images;
     },
+    convertToSmallWebP(path) {
+      const extension = ".webp";
+
+      if (path.endsWith(extension)) {
+        const filename = path.slice(0, -extension.length); // Remove the extension
+        const newFilename = filename + "-small" + extension; // Append "-small" before the extension
+        return newFilename;
+      }
+
+      // If the path doesn't end with ".webp", return the original path
+      return path;
+    },
   },
+
   created() {
     this.selectedEvent = this.$store.getters.getEventsList.find(
       (event) => event.id === this.id
@@ -102,7 +184,6 @@ p.date {
 }
 img {
   border-radius: 20px / 20px;
-  background-color: grey;
   object-fit: cover;
   width: 100%;
   height: 100%;
