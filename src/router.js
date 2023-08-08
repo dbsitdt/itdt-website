@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import LandingPage from "./pages/landing/LandingPage.vue";
 import EventInfo from "./pages/events/EventInfo.vue";
 import EventsPage from "./pages/events/EventsPage.vue";
+import CreditsPage from "./pages/credits/CreditsPage.vue";
 import NotFound from "./pages/NotFound.vue";
 function wait(duration) {
   return new Promise((resolve) => setTimeout(resolve, duration));
@@ -24,6 +25,7 @@ const router = createRouter({
     { path: "/", component: LandingPage },
     { path: "/events", component: EventsPage },
     { path: "/events/:id", props: true, component: EventInfo },
+    { path: "/credits", component: CreditsPage },
     { path: "/:notFound(.*)", component: NotFound },
   ],
   scrollBehavior(to) {

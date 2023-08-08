@@ -52,6 +52,9 @@ export default {
       "begin"
     );
   },
+  unmounted() {
+    this.handleLeave();
+  },
   methods: {
     handleEnter(str) {
       this.$store.dispatch("changeCursorText", str);

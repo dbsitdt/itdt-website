@@ -89,7 +89,6 @@ export default {
       stagger: 0.1,
       delay: 0.1,
     });
-    console.log("Added to nav");
     // this.$store.state.initialTl.play();
     // console.log("PLAYED TL");
   },
