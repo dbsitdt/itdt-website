@@ -138,13 +138,12 @@ a {
   text-decoration: inherit;
 }
 body {
-  background-color: var(--background);
+  background: var(--background);
   position: relative;
   overflow-x: hidden;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  will-change: transform;
 }
 .route-enter-from {
   opacity: 0;
