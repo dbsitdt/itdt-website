@@ -2,10 +2,7 @@
   <div class="hov" @mousemove="mousemove">
     <the-loader @finishedLoader="loaderIsFinished"></the-loader>
     <the-blob ref="blob"></the-blob>
-    <the-cursor
-      :style="{ opacity: !!cursorText ? 1 : 0 }"
-      :text="cursorText"
-    ></the-cursor>
+    <the-cursor :style="cursorStyle" :text="cursorText"></the-cursor>
     <the-header :playAnimation="finishedLoader"></the-header>
     <router-view v-slot="slotProps">
       <transition name="route" mode="out-in">
@@ -43,6 +40,9 @@ export default {
   computed: {
     cursorText() {
       return this.$store.getters.getCursorText;
+    },
+    cursorStyle() {
+      return { opacity: !!this.cursorText && window.innerWidth > 600 ? 1 : 0 };
     },
     isLoading() {
       return this.$store.state.isLoading;
