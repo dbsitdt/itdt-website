@@ -14,11 +14,12 @@ export default {
   z-index: 1;
   background: white;
   padding: 1vw 2vw;
-  opacity: none;
+  opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: opacity 100ms;
 }
+
 p {
   font-size: 2rem;
 }
