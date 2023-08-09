@@ -93,7 +93,6 @@ export default {
           trigger: `#${project.id}`,
           start: "top center",
           end: "bottom center",
-          markers: true,
           toggleActions: "play reverse play reverse",
         },
         background: `${project.dataset.bgcolor}`,
