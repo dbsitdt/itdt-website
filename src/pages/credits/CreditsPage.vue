@@ -6,24 +6,22 @@
       DBS IT Development Team.
     </p>
     <div class="credits-container">
-      <credit-card
-        class="credit-card"
-        title="Project Manager"
-        :people="this.managers"
-      >
+      <credit-card title="Project Manager" :people="this.managers">
       </credit-card>
-      <credit-card
-        class="credit-card"
-        title="Designer"
-        :people="this.designers"
-      >
+      <credit-card title="Lead Designer" :people="this.designers">
       </credit-card>
+      <credit-card title="Developers" :people="this.developers"> </credit-card>
+    </div>
+    <div class="credits-container">
+      <credit-card title="Master-in-charge" :people="this.tic"></credit-card>
+      <credit-card title="Chairman" :people="this.chair"> </credit-card>
+      <credit-card title="Vice Chairmen" :people="this.vice"></credit-card>
+      <credit-card title="Secretary" :people="this.secretary"></credit-card>
+      <credit-card title="Treasurer" :people="this.treasurer"></credit-card>
       <credit-card
-        class="credit-card"
-        title="Developers"
-        :people="this.developers"
-      >
-      </credit-card>
+        title="Executive Committee Members"
+        :people="this.exco"
+      ></credit-card>
     </div>
   </base-section>
 </template>
@@ -38,6 +36,17 @@ export default {
       managers: ["Owen Tam"],
       designers: ["Owen Tam"],
       developers: ["Owen Tam", "Timothy So", "Eddie Hu"],
+      tic: ["Mr. Quintak Lee"],
+      chair: ["Tam Ho Wang"],
+      vice: ["Chen Cheuk Shing", "So Pak Yin"],
+      secretary: ["Fung Man Lok"],
+      treasurer: ["Wang Tsun Tang"],
+      exco: [
+        "Lam Wing Kai",
+        "Tong Hei Shun",
+        "Wong Chun Wing Carlos",
+        "Zhou Richard Yixuan",
+      ],
     };
   },
   methods: {},

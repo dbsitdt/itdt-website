@@ -36,6 +36,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   beforeUnmount() {
     ScrollTrigger.getAll().forEach((t) => t.kill());
+    this.handleLeave();
   },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
@@ -52,9 +53,7 @@ export default {
       "begin"
     );
   },
-  unmounted() {
-    this.handleLeave();
-  },
+  unmounted() {},
   methods: {
     handleEnter(str) {
       this.$store.dispatch("changeCursorText", str);
