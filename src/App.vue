@@ -144,6 +144,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  will-change: transform;
 }
 .route-enter-from {
   opacity: 0;
