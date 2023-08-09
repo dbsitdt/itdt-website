@@ -34,6 +34,37 @@
           src="../../assets/projects/projects-dbsitdt.webm"
         ></video> -->
       </div>
+      <div class="project-container" id="Codequest" data-bgColor="#496c91">
+        <div class="project-text">
+          <p class="project-num">&lt;2&gt;</p>
+          <h4 class="project-title">Code Quest</h4>
+          <p class="project-desc">
+            The ITDT Code Quest is a web application under continuous
+            development since April 2023. The application provides hands-on
+            exercises and videos for members to learn different web development
+            technologies.
+          </p>
+          <base-cta-button
+            target="_blank"
+            href="https://www.figma.com/proto/aCqvRy2HGhMsIs8kjmmh6k/Code-Quest?type=design&node-id=28-35&t=ZD0yTIEUJtNFODyH-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=10%3A105&mode=design"
+            >Prototype</base-cta-button
+          >
+        </div>
+        <img
+          id="canvas3d"
+          src="../../assets/projects/projects-codequest.png"
+          alt="dbsitdt"
+          draggable="false"
+        />
+        <!-- <video
+          autoplay
+          loop
+          muted
+          playsinline
+          id="canvas3d"
+          src="../../assets/projects/projects-dbsitdt.webm"
+        ></video> -->
+      </div>
     </div>
   </section>
 </template>
@@ -62,7 +93,7 @@ export default {
           trigger: `#${project.id}`,
           start: "top center",
           end: "bottom center",
-          // markers: true,
+          markers: true,
           toggleActions: "play reverse play reverse",
         },
         background: `${project.dataset.bgcolor}`,
@@ -85,11 +116,13 @@ export default {
   color: white;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .project-container {
   display: flex;
   align-items: center;
   min-height: 50vh;
+  padding-bottom: 2vh;
 }
 .project-text {
   display: flex;
