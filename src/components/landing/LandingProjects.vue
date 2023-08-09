@@ -34,7 +34,11 @@
           src="../../assets/projects/projects-dbsitdt.webm"
         ></video> -->
       </div>
-      <div class="project-container" id="Codequest" data-bgColor="#496c91">
+      <div
+        class="project-container"
+        id="Codequest"
+        data-bgColor="rgb(73, 108, 145)"
+      >
         <div class="project-text">
           <p class="project-num">&lt;2&gt;</p>
           <h4 class="project-title">Code Quest</h4>
@@ -81,25 +85,23 @@ export default {
     // );
 
     gsap.registerPlugin(ScrollTrigger);
+    gsap.set("body", { background: "#1e2121" });
     const projectContainer = gsap.utils.toArray(".project-container");
     projectContainer.forEach((project) => {
-      gsap.from(`#${project.id}`, {
-        scrollTrigger: { trigger: `#${project.id}` },
-        opacity: 0,
-        duration: 0.7,
-      });
       gsap.to("body", {
         scrollTrigger: {
           trigger: `#${project.id}`,
           start: "top center",
           end: "bottom center",
+          // markers: true,
           toggleActions: "play reverse play reverse",
         },
         background: `${project.dataset.bgcolor}`,
-
         duration: 0.3,
       });
+      ScrollTrigger.refresh();
     });
+    ScrollTrigger.refresh();
   },
   beforeUnmount() {
     ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -122,6 +124,8 @@ export default {
   align-items: center;
   min-height: 50vh;
   padding-bottom: 2vh;
+  margin-bottom: 10px;
+  /* BUG Initially does not work but on second try works without the margin-bottom */
 }
 .project-text {
   display: flex;

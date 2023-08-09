@@ -20,7 +20,10 @@
   border-radius: 19px;
   font-size: clamp(1.1rem, 3vw, 1.3rem);
 }
-
+img,
+p {
+  user-select: none;
+}
 @media (max-width: 1240px) {
   .button-primary {
     width: auto;
