@@ -112,7 +112,7 @@ export default {
         onLeave: () =>
           i === projectContainer.length - 1 && switchColor("#000000"),
         onLeaveBack: () => switchColor(previousColor),
-        markers: { indent: 150 * i },
+        // markers: { indent: 150 * i },
         id: i + 1,
       });
     });
