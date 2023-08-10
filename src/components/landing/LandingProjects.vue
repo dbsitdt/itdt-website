@@ -21,7 +21,7 @@
         </div>
         <img
           id="canvas3d"
-          src="../../assets/projects/projects-dbsitdt-new.png"
+          src="../../assets/projects/projects-dbsitdt.png"
           alt="dbsitdt"
           draggable="false"
         />
@@ -137,7 +137,9 @@ export default {
   display: flex;
   align-items: center;
   min-height: 50vh;
-  padding-bottom: 2vh;
+}
+.project-container:not(:last-child) {
+  padding-bottom: 5vh;
 }
 .project-text {
   display: flex;
