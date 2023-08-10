@@ -139,7 +139,6 @@ a {
 }
 body {
   background-color: var(--background);
-  position: relative;
   overflow-x: hidden;
 }
 .route-enter-from {
@@ -163,6 +162,7 @@ body {
 }
 .hov {
   min-height: 100vh;
+  position: relative;
 }
 .section-title {
   font-size: clamp(3rem, 5vw, 4rem);
