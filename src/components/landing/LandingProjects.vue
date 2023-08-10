@@ -5,7 +5,7 @@
       <div
         class="project-container"
         id="ITDTWebsite"
-        data-bgColor="rgb(0, 94, 131)"
+        data-bgcolor="rgb(0, 94, 131)"
       >
         <div class="project-text">
           <p class="project-num">&lt;1&gt;</p>
@@ -37,7 +37,7 @@
       <div
         class="project-container"
         id="Codequest"
-        data-bgColor="rgb(73, 108, 145)"
+        data-bgcolor="rgb(73, 108, 145)"
       >
         <div class="project-text">
           <p class="project-num">&lt;2&gt;</p>
@@ -85,23 +85,37 @@ export default {
     // );
 
     gsap.registerPlugin(ScrollTrigger);
-    gsap.set("body", { background: "#1e2121" });
     const projectContainer = gsap.utils.toArray(".project-container");
-    projectContainer.forEach((project) => {
-      gsap.to("body", {
-        scrollTrigger: {
-          trigger: `#${project.id}`,
-          start: "top center",
-          end: "bottom center",
-          // markers: true,
-          toggleActions: "play reverse play reverse",
-        },
-        background: `${project.dataset.bgcolor}`,
+
+    const switchColor = (color) => {
+      gsap.to(document.body, {
         duration: 0.3,
+        ease: "power1.inOut",
+        backgroundColor: color,
       });
-      ScrollTrigger.refresh();
+    };
+
+    projectContainer.forEach((project, i) => {
+      const color = project.dataset.bgcolor;
+      console.log(i, color);
+
+      const previousColor = projectContainer[i - 1]
+        ? projectContainer[i - 1].dataset.bgcolor
+        : "#1e2121";
+      ScrollTrigger.create({
+        trigger: project,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => switchColor(color),
+        onEnterBack: () =>
+          i === projectContainer.length - 1 && switchColor(color),
+        onLeave: () =>
+          i === projectContainer.length - 1 && switchColor("#000000"),
+        onLeaveBack: () => switchColor(previousColor),
+        markers: { indent: 150 * i },
+        id: i + 1,
+      });
     });
-    ScrollTrigger.refresh();
   },
   beforeUnmount() {
     ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -124,8 +138,6 @@ export default {
   align-items: center;
   min-height: 50vh;
   padding-bottom: 2vh;
-  margin-bottom: 10px;
-  /* BUG Initially does not work but on second try works without the margin-bottom */
 }
 .project-text {
   display: flex;

@@ -138,7 +138,7 @@ a {
   text-decoration: inherit;
 }
 body {
-  background: var(--background);
+  background-color: var(--background);
   position: relative;
   overflow-x: hidden;
   -webkit-appearance: none;
