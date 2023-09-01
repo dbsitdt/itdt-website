@@ -1,6 +1,8 @@
 <template>
   <div class="hov" @mousemove="mousemove">
     <the-loader @finishedLoader="loaderIsFinished"></the-loader>
+    <the-ad></the-ad>
+
     <the-blob ref="blob"></the-blob>
     <the-cursor :style="cursorStyle" :text="cursorText"></the-cursor>
     <the-header :playAnimation="finishedLoader"></the-header>
@@ -18,6 +20,7 @@ import TheFooter from "./components/layout/TheFooter.vue";
 import TheCursor from "./components/layout/TheCursor.vue";
 import TheLoader from "./components/layout/TheLoader.vue";
 import TheHeader from "./components/layout/TheHeader.vue";
+import TheAd from "./components/layout/TheAd.vue";
 import { gsap } from "gsap";
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -29,6 +32,7 @@ export default {
     TheBlob,
     TheCursor,
     TheLoader,
+    TheAd,
   },
   data() {
     return {
