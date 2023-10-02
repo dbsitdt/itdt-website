@@ -26,8 +26,6 @@
 a {
   text-decoration: underline;
 }
-.cross {
-}
 .cross:after {
   display: inline-block;
   content: "\00d7";
