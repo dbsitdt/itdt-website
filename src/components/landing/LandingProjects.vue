@@ -1,6 +1,6 @@
 <template>
   <section id="projects-section">
-    <h2 class="section-title projects-title">Projects</h2>
+    <h2 class="section-title projects-title" ref="sectionTitle">Projects</h2>
     <div class="project-area">
       <div
         class="project-container"
@@ -25,14 +25,6 @@
           alt="dbsitdt"
           draggable="false"
         />
-        <!-- <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="canvas3d"
-          src="../../assets/projects/projects-dbsitdt.webm"
-        ></video> -->
       </div>
       <div
         class="project-container"
@@ -60,14 +52,6 @@
           alt="dbsitdt"
           draggable="false"
         />
-        <!-- <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="canvas3d"
-          src="../../assets/projects/projects-dbsitdt.webm"
-        ></video> -->
       </div>
     </div>
   </section>
@@ -75,15 +59,11 @@
 <script>
 // import { Application } from "@splinetool/runtime";
 import { gsap } from "gsap";
+import Scrambler from "scrambling-text";
+
 import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   async mounted() {
-    // const canvas = this.$refs.canvas3d;
-    // const app = new Application(canvas);
-    // await app.load(
-    //   "https://prod.spline.design/9SVDrl2aFACVIQ2Z/scene.splinecode"
-    // );
-
     gsap.registerPlugin(ScrollTrigger);
     const projectContainer = gsap.utils.toArray(".project-container");
 
@@ -110,11 +90,51 @@ export default {
         onEnterBack: () =>
           i === projectContainer.length - 1 && switchColor(color),
         onLeave: () =>
-          i === projectContainer.length - 1 && switchColor("#000000"),
+          i === projectContainer.length - 1 && switchColor("#1e2121"),
         onLeaveBack: () => switchColor(previousColor),
         // markers: { indent: 150 * i },
         id: i + 1,
       });
+      gsap.from(project.querySelector(".project-text"), {
+        opacity: 0,
+        x: -100,
+        duration: 0.4,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: project,
+        },
+      });
+    });
+    ScrollTrigger.create({
+      trigger: "#projects-section",
+      onEnter: () => {
+        const scrambler = new Scrambler();
+        const handleScramble = (text) => {
+          const loaderText = this.$refs.sectionTitle;
+          loaderText.innerText = text;
+        };
+        const characters = [
+          ...Scrambler.CHARACTERS.DEFAULT,
+          ...Scrambler.CHARACTERS.ALPHABET,
+        ];
+        scrambler.scramble("Projects", handleScramble, {
+          characters: characters,
+        });
+      },
+      onEnterBack: () => {
+        const scrambler = new Scrambler();
+        const handleScramble = (text) => {
+          const loaderText = this.$refs.sectionTitle;
+          loaderText.innerText = text;
+        };
+        const characters = [
+          ...Scrambler.CHARACTERS.DEFAULT,
+          ...Scrambler.CHARACTERS.ALPHABET,
+        ];
+        scrambler.scramble("Projects", handleScramble, {
+          characters: characters,
+        });
+      },
     });
   },
   beforeUnmount() {

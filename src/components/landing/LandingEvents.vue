@@ -1,6 +1,6 @@
 <template>
   <section id="events">
-    <h2 class="section-title gd-title">Events</h2>
+    <h2 class="section-title gd-title" ref="sectionTitle">Events</h2>
     <div class="photo-container">
       <div
         class="photo"
@@ -32,6 +32,7 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Scrambler from "scrambling-text";
 
 export default {
   beforeUnmount() {
@@ -52,6 +53,37 @@ export default {
       },
       "begin"
     );
+    ScrollTrigger.create({
+      trigger: "#events",
+      onEnter: () => {
+        const scrambler = new Scrambler();
+        const handleScramble = (text) => {
+          const loaderText = this.$refs.sectionTitle;
+          loaderText.innerText = text;
+        };
+        const characters = [
+          ...Scrambler.CHARACTERS.DEFAULT,
+          ...Scrambler.CHARACTERS.ALPHABET,
+        ];
+        scrambler.scramble("Events", handleScramble, {
+          characters: characters,
+        });
+      },
+      onEnterBack: () => {
+        const scrambler = new Scrambler();
+        const handleScramble = (text) => {
+          const loaderText = this.$refs.sectionTitle;
+          loaderText.innerText = text;
+        };
+        const characters = [
+          ...Scrambler.CHARACTERS.DEFAULT,
+          ...Scrambler.CHARACTERS.ALPHABET,
+        ];
+        scrambler.scramble("Events", handleScramble, {
+          characters: characters,
+        });
+      },
+    });
   },
   unmounted() {},
   methods: {
