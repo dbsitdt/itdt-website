@@ -58,17 +58,9 @@ export default {
     gsap.set(".blob", { xPercent: -50, yPercent: -50 });
     gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
-    await delay(4000);
-    gsap.to(".loader-logo", {
-      duration: 1,
-      transform: "translateY(-150vh)",
-    });
-    gsap.to(".loader-text", {
-      duration: 1.4,
-      transform: "translateY(-150vh)",
-    });
+    await delay(5500);
     gsap.to("#loader", {
-      duration: 1.6,
+      duration: 1.5,
       transform: "translateY(-150vh)",
     });
     this.$emit("finishedLoader");
