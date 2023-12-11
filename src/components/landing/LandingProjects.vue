@@ -11,9 +11,14 @@
           <p class="project-num">&lt;1&gt;</p>
           <h4 class="project-title">ITDT Website</h4>
           <p class="project-desc">
-            The ITDT Website was created in January 2023 and combined the
-            efforts from many members of the team's web stream, showcasing our
-            work and photos from past activities.
+            The IT Development Team's official website is a platform created and
+            maintained by the team members to showcase their work and share
+            their experiences. The website serves as a central hub for visitors
+            to learn more about the team, its members, and the projects they
+            have worked on. Paired with a modern interface, the site showcases
+            the diverse range of software development projects undertaken by the
+            team, including web applications, mobile apps, and other IT
+            solutions.
           </p>
           <base-cta-button target="_blank" href="https://dbsitdt.netlify.app"
             >Check it out</base-cta-button
@@ -36,9 +41,12 @@
           <h4 class="project-title">Code Quest</h4>
           <p class="project-desc">
             The ITDT Code Quest is a web application under continuous
-            development since April 2023. The application provides hands-on
-            exercises and videos for members to learn different web development
-            technologies.
+            development since April 2023. The application is designed
+            specifically as a learning platform for web development. It serves
+            as a comprehensive resource for web stream members to acquire and
+            enhance their skills in the basics of web development. Through a
+            user-friendly interface, Code Quest offers a step-by-step and
+            hands-on approach to learning web development.
           </p>
           <base-cta-button
             target="_blank"
@@ -166,6 +174,7 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  margin-right: 10rem;
 }
 .project-num {
   font-size: 1.5rem;
@@ -177,7 +186,7 @@ export default {
   margin-bottom: 2vw;
 }
 .project-desc {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
 }
 .button-primary {
   margin: 0;
