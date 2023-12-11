@@ -50,8 +50,8 @@
           </p>
           <base-cta-button
             target="_blank"
-            href="https://www.figma.com/proto/aCqvRy2HGhMsIs8kjmmh6k/Code-Quest?type=design&node-id=28-35&t=ZD0yTIEUJtNFODyH-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=10%3A105&mode=design"
-            >Prototype</base-cta-button
+            href="https://itdt-codequest.netlify.app/"
+            >Check it out</base-cta-button
           >
         </div>
         <img
@@ -174,7 +174,7 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  margin-right: 10rem;
+  margin-right: clamp(3rem, 10%, 5rem);
 }
 .project-num {
   font-size: 1.5rem;
@@ -186,7 +186,7 @@ export default {
   margin-bottom: 2vw;
 }
 .project-desc {
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 .button-primary {
   margin: 0;
@@ -197,8 +197,8 @@ export default {
 }
 @media (max-width: 1300px) {
   .project-area .project-container #canvas3d {
-    min-height: 40vw;
-    min-width: 60vw;
+    min-height: 30vw;
+    min-width: 35vw;
   }
 }
 @media (max-width: 1008px) {
