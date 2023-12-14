@@ -207,6 +207,7 @@ export default {
   }
   .project-text {
     order: 2;
+    margin-right: 0;
   }
   #canvas3d {
     max-width: 100%;
