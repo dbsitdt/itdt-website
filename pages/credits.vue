@@ -25,9 +25,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import CreditCard from "./CreditCard.vue";
-
 const managers = ref(["Owen Tam"]);
 const designers = ref(["Owen Tam"]);
 const developers = ref(["Owen Tam", "Timothy So", "Eddie Hu"]);

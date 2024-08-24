@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     { path: "~/components/landing", pathPrefix: false },
     { path: "~/components/ui", pathPrefix: false },
     { path: "~/components/layout", pathPrefix: false },
+    { path: "~/components/credits", pathPrefix: false },
 
     "~/components",
   ],
