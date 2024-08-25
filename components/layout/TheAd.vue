@@ -2,9 +2,9 @@
   <transition>
     <div class="ad" v-if="adOpen">
       <p>
-        Looking to invest in your future in 2023? DBS ITDT is now recruiting
-        until 31/9/2023!
-        <router-link to="/join">Click here to join.</router-link>
+        Looking to invest in your future? DBS ITDT is now recruiting for the
+        24-25 school year!
+        <NuxtLink to="/join">Click here to join.</NuxtLink>
       </p>
       <div class="cross" @click="closeAd"></div>
     </div>

@@ -5,6 +5,7 @@
     <the-blob ref="blob"></the-blob>
     <the-cursor :style="cursorStyle" :text="cursorText"></the-cursor>
     <the-header :playAnimation="finishedLoader"></the-header>
+    <TheAd></TheAd>
     <slot></slot>
     <the-footer></the-footer>
   </div>
