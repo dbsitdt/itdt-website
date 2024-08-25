@@ -40,7 +40,6 @@
 </template>
 
 <script setup>
-import Tilt from "vanilla-tilt-vue";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 

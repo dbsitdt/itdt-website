@@ -4,14 +4,14 @@
     <div class="photo-container">
       <div
         class="photo"
-        @click="navEvent('ive')"
-        @mouseenter="handleEnter('<visit-to-ive>')"
+        @click="navEvent('dbs-it-challenge')"
+        @mouseenter="handleEnter('<dbs-it-challenge>')"
         @mouseleave="handleLeave"
       ></div>
       <div
         class="photo"
-        @click="navEvent('dream-district-competition')"
-        @mouseenter="handleEnter('<dream-district-competition>')"
+        @click="navEvent('city-i&t-2')"
+        @mouseenter="handleEnter('<city-i&t-2>')"
         @mouseleave="handleLeave"
       ></div>
       <div

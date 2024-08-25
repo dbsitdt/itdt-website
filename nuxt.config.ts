@@ -32,4 +32,9 @@ export default defineNuxtConfig({
   },
 
   modules: ["@pinia/nuxt"],
+  compatibilityDate: "2024-08-25",
+  runtimeConfig: {
+    dbURL: process.env.MONGODB_URL,
+    dbPassword: process.env.MONGODB_PASSWORD,
+  },
 });

@@ -5,7 +5,7 @@ export const useStore = defineStore("store", {
     bgColor: "#1e2121",
     isLoading: false,
     cursorText: "",
-    eventsList: [
+    archiveEventsList: [
       {
         id: "ive",
         title: "Visit to IVE",
@@ -27,6 +27,38 @@ export const useStore = defineStore("store", {
           "dream-district-competition4",
           "dream-district-competition5",
           "dream-district-competition6",
+        ],
+      },
+    ],
+    eventsList: [
+      {
+        id: "dbs-it-challenge",
+        title: "DBS IT Challenge 2024",
+        description:
+          "The Team hosted the DBS IT Challenge, a team-based tournament centered around IT knowledge and application for students. Our executive committee worked hard to create challenging yet exciting questions to enhance the learning opportunities for all contestants and spectators. With innovative systems and unique round formats such as a Jeopardy!-inspired question-answer round testing the strategic intelligence of teams, as well as an online scavenger hunt inspired by professional-level cybersecurity competitions, the IT Challenge successfully provided a platform for students with existing knowledge to shine, as well as raise awareness for technological proficiency among students.",
+        date: "April 2024",
+        images: [
+          "dbs-it-challenge1",
+          "dbs-it-challenge2",
+          "dbs-it-challenge3",
+          "dbs-it-challenge4",
+          "dbs-it-challenge5",
+          "dbs-it-challenge6",
+        ],
+      },
+      {
+        id: "city-i&t-2",
+        title: "City I&T Grand Challenge 2",
+        description:
+          "Our team participated in City I&T Grand Challenge 2 and was awarded 1st runner-up in the upper secondary group, after fierce competition with more than 1100 teams over 3 round. Hosted by the HKSAR Innovation and Technology Commission, City I&T Grand Challenge is a prestigious competition that celebrates innovation and technological application. Over the 4 months of the competition, the team pitched an innovative drone network for managing country parks, combining fixed wing drones with AI technology. The team was awarded with HKD24000 worth of book vouchers. ",
+        date: "August 2024",
+        images: [
+          "city-i&t-21",
+          "city-i&t-22",
+          "city-i&t-23",
+          "city-i&t-24",
+          "city-i&t-25",
+          "city-i&t-26",
         ],
       },
       {
