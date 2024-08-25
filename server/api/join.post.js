@@ -4,14 +4,14 @@ import App from "~/models/appModel.js";
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
 
-  if (body.uuid) {
+  if (body?.uuid) {
     // if valid (exists + does not have full account)
     const oldApp = await App.findOne({
       uuid: body.uuid,
     }).exec();
     if (oldApp && !oldApp.completed) {
       // uuid is correct and it is uncompleted
-      console.log("Found uncompleted account with uuid");
+      // console.log("Found uncompleted account with uuid");
       const updatedApp = await App.findOneAndUpdate(
         { uuid: body.uuid },
         {
@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
     } else {
       // uuid is wrong or old app is completed
       if (oldApp?.completed) {
-        console.log("Tried to submit completed account");
+        // console.log("Tried to submit completed account");
         // completed
         throw new Error(
           `The application with uuid ${body.uuid} has already been completed. Contact dbs20072265@g.dbs.edu.hk if this is unexpected.`
@@ -71,7 +71,6 @@ export default defineEventHandler(async (event) => {
         completed: false,
       }).exec();
       if (tryApp) {
-        console.log("Trying to log back in?");
         return sendRedirect(event, "/join?uuid=" + tryApp.uuid);
       }
 

@@ -2,7 +2,6 @@ import App from "~/models/appModel.js";
 
 export default defineEventHandler(async (event) => {
   const { uuid } = getQuery(event);
-  console.log(uuid);
   if (uuid) {
     const app = await App.findOne({
       uuid: uuid,

@@ -3,7 +3,7 @@
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
 
-      <form action="https://dbsitdt.netlify.app/join" method="post">
+      <form action="http://dbsitdt.netlify.app/api/join" method="post">
         <div>
           <label for="fullName">Full Name:</label>
           <input type="text" name="fullName" id="fullName" required />
@@ -395,7 +395,6 @@ let curAppStatus = ref(0);
 if (uuid) {
   const { data: res } = await useFetch("/api/check?uuid=" + uuid);
   const { appStatus } = res.value;
-  console.log(appStatus);
   if (appStatus === "Unknown uuid") {
     curAppStatus.value = 0;
     await navigateTo("/join");
@@ -609,7 +608,6 @@ const submitForm = async function () {
     answers: answers.value,
     uuid: uuid,
   };
-  console.log(body);
   try {
     await $fetch("/api/join", {
       method: "post",
@@ -617,7 +615,6 @@ const submitForm = async function () {
     });
     errorText.value = "";
     curAppStatus.value = 2;
-    console.log("SUBMITTED ALL");
   } catch (error) {
     errorText.value =
       "Something went wrong. Try again and contact dbs20072265@g.dbs.edu.hk if this issue persists.";
