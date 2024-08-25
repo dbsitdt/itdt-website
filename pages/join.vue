@@ -4,7 +4,7 @@
       <h2>Join ITDT for the 24-25 school year!</h2>
 
       <form
-        action="https://66cb5e6d53d9170008dde26a--dbsitdt.netlify.app/"
+        action="https://66cb5e6d53d9170008dde26a--dbsitdt.netlify.app/join"
         method="post"
       >
         <div>
