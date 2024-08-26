@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "nuxt-api-shield"],
   compatibilityDate: "2024-08-25",
   runtimeConfig: {
     dbURL: process.env.MONGODB_URL,

@@ -15,6 +15,7 @@
     "mongoose": "^8.5.4",
     "morgan": "^1.10.0",
     "nuxt": "^3.13.0",
+    "nuxt-api-shield": "^0.6.7",
     "pinia": "^2.2.2",
     "scramble-text": "^0.0.9",
     "scrambling-text": "^1.2.0",
