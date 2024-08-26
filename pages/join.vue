@@ -3,7 +3,7 @@
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
 
-      <form action="http://dbsitdt.netlify.app/api/join" method="post">
+      <form action="https://dbsitdt.netlify.app/api/join" method="post">
         <div>
           <label for="fullName">Full Name:</label>
           <input type="text" name="fullName" id="fullName" required />
@@ -630,7 +630,8 @@ const classLetterOptions = ["D", "S", "G", "P", "M", "L", "A", "J", "T"];
 .completed-container {
   background: rgba(41, 46, 51, 0.699);
   backdrop-filter: blur(5px);
-  padding: 2vw;
+  padding: clamp(1rem, 2vw, 2rem);
+  // padding: 2vw;
   color: white;
 }
 form {

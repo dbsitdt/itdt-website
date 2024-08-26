@@ -201,7 +201,7 @@ onBeforeUnmount(() => {
 }
 @media (max-width: 500px) or (max-device-height: 600px) {
   .hero-img-box:nth-of-type(1) {
-    height: 80%;
+    height: 70vh;
     width: 80%;
     left: 0;
     top: 0;

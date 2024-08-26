@@ -19,37 +19,9 @@
       sodipodi:docname="itdtlogo.svg"
       inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
     >
-      <metadata id="metadata965">
-        <rdf:RDF
-          ><cc:Work rdf:about=""
-            ><dc:format>image/svg+xml</dc:format
-            ><dc:type
-              rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work
-        ></rdf:RDF>
-      </metadata>
+      <metadata id="metadata965"></metadata>
       <defs id="defs963" />
-      <sodipodi:namedview
-        pagecolor="#ffffff"
-        bordercolor="#666666"
-        borderopacity="1"
-        objecttolerance="10"
-        gridtolerance="10"
-        guidetolerance="10"
-        inkscape:pageopacity="0"
-        inkscape:pageshadow="2"
-        inkscape:window-width="1920"
-        inkscape:window-height="1017"
-        id="namedview961"
-        showgrid="false"
-        inkscape:zoom="6.9616348"
-        inkscape:cx="171.78462"
-        inkscape:cy="219.71245"
-        inkscape:window-x="-8"
-        inkscape:window-y="-8"
-        inkscape:window-maximized="1"
-        inkscape:current-layer="Layer_1"
-        inkscape:document-rotation="0"
-      />
+
       <path
         id="outer"
         style="fill: #278bff; fill-opacity: 1"
