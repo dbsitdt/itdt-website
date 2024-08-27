@@ -3,7 +3,7 @@
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
 
-      <form action="https://dbsitdt.netlify.app/api/join" method="post">
+      <form action="http://localhost:3000/api/join" method="post">
         <div>
           <label for="fullName">Full Name:</label>
           <input type="text" name="fullName" id="fullName" required />
@@ -356,7 +356,10 @@
           </div>
         </div>
         <p v-if="errorText">{{ errorText }}</p>
-        <input v-if="canSubmit" type="submit" value="Submit" />
+        <div v-if="isLoading" class="wrap">
+          <div class="spinner"></div>
+        </div>
+        <input v-if="canSubmit && !isLoading" type="submit" value="Submit" />
       </form>
     </div>
     <div class="completed-container" v-else>
@@ -388,6 +391,7 @@ const route = useRoute();
 
 // Check if we are on step 2
 const uuid = route.query.uuid;
+const isLoading = ref(false);
 let curAppStatus = ref(0);
 // 0 is unknown (not initiated)
 // 1 is on step 2
@@ -609,13 +613,16 @@ const submitForm = async function () {
     uuid: uuid,
   };
   try {
+    isLoading.value = true;
     await $fetch("/api/join", {
       method: "post",
       body: JSON.stringify(body),
     });
     errorText.value = "";
     curAppStatus.value = 2;
+    isLoading.value = false;
   } catch (error) {
+    isLoading.value = false;
     errorText.value =
       "Something went wrong. Try again and contact dbs20072265@g.dbs.edu.hk if this issue persists.";
   }
@@ -633,6 +640,23 @@ const classLetterOptions = ["D", "S", "G", "P", "M", "L", "A", "J", "T"];
   padding: clamp(1rem, 2vw, 2rem);
   // padding: 2vw;
   color: white;
+}
+.spinner {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 4px solid rgb(0, 6, 37);
+  border-left: 4px solid white;
+  animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 form {
   display: flex;
@@ -694,6 +718,14 @@ input[type="submit"] {
     text-decoration: underline;
   }
 }
+.wrap {
+  /*   Flex Perfect Centring  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*   Colors */
+  box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);
+}
 #secondary-form {
   form {
     display: flex;
@@ -704,7 +736,7 @@ input[type="submit"] {
   h2 {
     margin-bottom: 0.7rem;
   }
-  div {
+  div:not(.wrap, .spinner) {
     width: 100%;
   }
   textarea {
