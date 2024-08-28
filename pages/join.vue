@@ -3,7 +3,7 @@
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
 
-      <form action="http://localhost:3000/api/join" method="post">
+      <form action="https://dbsitdt.netlify.app/api/join" method="post">
         <div>
           <label for="fullName">Full Name:</label>
           <input type="text" name="fullName" id="fullName" required />
@@ -25,7 +25,13 @@
         </div>
         <div>
           <label for="classNumber">Class Number:</label>
-          <input type="number" name="classNumber" id="classNumber" required />
+          <input
+            type="number"
+            min="0"
+            name="classNumber"
+            id="classNumber"
+            required
+          />
         </div>
         <div>
           <label for="email">School Email:</label>
