@@ -3,7 +3,7 @@
     <div class="ad" v-if="adOpen">
       <p>
         Looking to invest in your future? DBS ITDT is now recruiting for the
-        24-25 school year!
+        24-25 school year! (Deadline: 13/9)
         <NuxtLink to="/join">Click here to join.</NuxtLink>
       </p>
       <div class="cross" @click="closeAd"></div>
