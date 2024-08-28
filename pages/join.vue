@@ -27,7 +27,8 @@
           <label for="classNumber">Class Number:</label>
           <input
             type="number"
-            min="0"
+            min="1"
+            max="40"
             name="classNumber"
             id="classNumber"
             required
@@ -90,10 +91,11 @@
             v-model="commitments"
           ></textarea>
         </div>
-        <div>
+        <div class="availabilities-container">
           <label for="availabilities"
             >Our trainings typically take place during lunches after 1pm. How
-            many lunches can you commit to the team on a weekly basis?</label
+            many lunches can you commit to the team on a weekly basis?
+            (1-5)</label
           >
           <input
             required
@@ -428,150 +430,109 @@ const questionBank = {
   web: [
     {
       question:
-        "What is the difference between document.getElementById() and document.querySelector() in JavaScript?",
+        "Which of the following in HTML creates some text with a hyperlink to Google?",
       answers: [
-        "document.getElementById() selects an element by its unique ID, while document.querySelector() can select elements based on any valid CSS selector",
-        "document.getElementById() returns a single element, while document.querySelector() returns a NodeList of all matching elements",
-        "document.getElementById() is faster and more efficient than document.querySelector()",
-        "document.getElementById() is a legacy method, while document.querySelector() is a more modern and flexible way to select elements",
-      ],
-    },
-    {
-      question: "What is the purpose of the display property in CSS?",
-      answers: [
-        "To control how an element is displayed on the page, such as inline, block, or none",
-        "To set the background color of an element",
-        "To define the font style and size of an element",
-        "To position an element relative to its parent container",
+        "<a url=”https://www.google.com/”>text</a>",
+        "<a href=”https://www.google.com/”>text</a>",
+        "<url=”https://www.google.com/”>text</url>",
+        "<url to=”https://www.google.com/”>text</url>",
       ],
     },
     {
       question:
-        "What is the difference between async and defer attributes in the <script> tag?",
-      answers: [
-        "async scripts are downloaded and executed as soon as they are available, while defer scripts are executed in the order they appear in the HTML",
-        "async scripts block the parsing of the HTML, while defer scripts do not",
-        "async scripts can be executed in any order, while defer scripts are executed in the order they appear in the HTML",
-        "async is used for independent scripts, while defer is used for scripts that depend on the DOM",
-      ],
-    },
-    {
-      question: "What is the purpose of the flexbox layout in CSS?",
-      answers: [
-        "To create flexible and responsive layouts by controlling the size, position, and order of elements within a container",
-        "To create grid-based layouts with rows and columns",
-        "To add drop shadows and other visual effects to elements",
-        "To control the scrolling behavior of a webpage",
-      ],
+        "Which of the following is considered to be a programming language?",
+      answers: ["HTML", "CSS", "JS", "XSL"],
     },
     {
       question:
-        "What is the difference between var, let, and const when declaring variables in JavaScript?",
+        "Which of the following is a valid way to apply CSS to a HTML element?",
       answers: [
-        "var has function scope, let has block scope, and const is used for declaring constants",
-        "var can be redeclared, let cannot be redeclared, and const must be initialized with a value",
-        "var is hoisted to the top of the scope, let and const are not hoisted",
-        "All three have the same functionality, the only difference is in their naming conventions",
+        "Inline styles",
+        "Internal styles",
+        "External stylesheet",
+        "All of the above",
       ],
+    },
+    {
+      question: "Which tag can create text with the largest default font size?",
+      answers: ["<large>", "<h1>", "<h0>", "<h7>"],
+    },
+    {
+      question: "Which code is used to define a variable in javascript?",
+      answers: ["const car", "define car", "create car", "build car"],
     },
   ],
   python: [
     {
       question:
-        "What is the purpose of the self parameter in Python class methods?",
-      answers: [
-        "To refer to the current instance of the class within the method",
-        "To pass additional arguments to the method",
-        "To define the return type of the method",
-        "To call other methods within the same class",
-      ],
+        "Which of the following is typically used to access instance variables and methods within a class?",
+      answers: ["this", "self", "inst", "Base"],
     },
     {
-      question:
-        "What is the difference between a list comprehension and a for loop in Python?",
-      answers: [
-        "List comprehensions are more concise and can be used to create new lists in a single line of code, while for loops are more flexible and can be used for a wider range of tasks",
-        "List comprehensions can only be used with lists, while for loops can be used with any iterable object",
-        "List comprehensions are faster and more efficient than for loops",
-        "List comprehensions are only available in Python 3, while for loops have been available since Python 2",
-      ],
+      question: "Which keyword is used to define a function?",
+      answers: ["fun", "func", "def", "void"],
     },
     {
-      question:
-        "What is the purpose of the __str__ and __repr__ methods in Python classes?",
-      answers: [
-        "__str__ provides a human-readable string representation of an object, while __repr__ provides a more technical, machine-readable representation",
-        "__str__ is used for printing objects, while __repr__ is used for debugging purposes",
-        "__str__ and __repr__ are used to define the behavior of the print() and repr() functions, respectively",
-        "__str__ and __repr__ are used to define the behavior of the + and - operators, respectively",
-      ],
+      question: "What is used to start a comment in Python?",
+      answers: ["//", "<!--", "/*", "#"],
     },
     {
-      question: "What is the purpose of the with statement in Python?",
-      answers: [
-        "To simplify the management of resources, such as files or database connections, by automatically handling the setup and teardown of the resource",
-        "To define a code block that should be executed repeatedly until a certain condition is met",
-        "To handle exceptions that may occur during the execution of a program",
-        "To define a function that can be called from other parts of the code",
-      ],
+      question: "Which is used to handle errors/exceptions in Python?",
+      answers: ["try/catch", "try/except", "catch/throw", "catch/return"],
     },
     {
-      question: "What is the difference between a list and a tuple in Python?",
+      question: "What is the output of the following code? print(type([]))",
       answers: [
-        "Lists are mutable, meaning their elements can be modified, while tuples are immutable, meaning their elements cannot be modified",
-        "Lists are defined using square brackets [], while tuples are defined using parentheses ()",
-        "Lists can be used for a wide range of data storage and manipulation tasks, while tuples are primarily used for storing a fixed set of values",
-        "Lists are more memory-efficient than tuples, but tuples are generally faster and more lightweight",
+        "<class ‘list’>",
+        "<class ‘dictionary’>",
+        "<class ‘array’>",
+        "<class ‘set’>",
       ],
     },
   ],
   hardware: [
     {
-      question: "What is the purpose of a CPU cache in a computer?",
+      question: "Which of the following is the correct name for GPU?",
       answers: [
-        "To store frequently accessed data and instructions, reducing the time required to retrieve them from main memory",
-        "To provide additional storage space for the computer's operating system and applications",
-        "To manage the flow of data between the CPU and other hardware components, such as the GPU and RAM",
-        "To control the power consumption of the computer and extend its battery life",
+        "General Processing Unit",
+        "Graphics Processing Unit",
+        "Gaming Processing Unit",
+        "Grid Processing Unit",
       ],
     },
     {
       question:
-        "What is the difference between a HDD (Hard Disk Drive) and an SSD (Solid-State Drive)?",
+        "Which of the following is a possible clock speed of a GPU when running a game?",
+      answers: ["9Hz", "24dB", "2.4GHz", "150W"],
+    },
+    {
+      question:
+        "Which of the following best describes the function of RAM in a computer system?",
       answers: [
-        "HDDs use spinning magnetic disks to store data, while SSDs use flash memory chips that have no moving parts",
-        "HDDs are generally less expensive per gigabyte of storage, while SSDs are faster and more reliable",
-        "HDDs are more suitable for long-term data storage, while SSDs are better for frequent read/write operations",
-        "HDDs are more susceptible to physical damage, while SSDs are more resistant to shock and vibration",
+        "Long-term data storage",
+        "Instruction processing",
+        "Graphics rendering",
+        "Temporary data storage",
       ],
     },
     {
       question:
-        "What is the purpose of a GPU (Graphics Processing Unit) in a computer?",
+        "Which of the following is a legitimate Intel CPU in production?",
       answers: [
-        "To handle the rendering and processing of graphics and video, offloading these tasks from the CPU",
-        "To provide additional storage space for the computer's operating system and applications",
-        "To manage the flow of data between the CPU and other hardware components, such as the RAM and storage devices",
-        "To control the power consumption of the computer and extend its battery life",
+        "Intel i9-RX790",
+        "Intel Core Ultra 9 185H",
+        "Intel 8 Pro Max",
+        "Intel S890",
       ],
     },
     {
       question:
-        "What is the difference between SDRAM and DDR SDRAM in computer memory?",
+        "Which of the following best describes the function of BIOS in computers?",
       answers: [
-        "SDRAM is a older, single-data-rate memory technology, while DDR SDRAM is a newer, double-data-rate technology that can transfer data on both the rising and falling edges of the clock signal",
-        "SDRAM and DDR SDRAM have the same underlying technology, the only difference is in the naming conventions",
-        "SDRAM is faster and more efficient than DDR SDRAM, but requires more power to operate",
-        "SDRAM is used for long-term storage, while DDR SDRAM is used for short-term, high-speed memory access",
-      ],
-    },
-    {
-      question: "What is the purpose of a motherboard in a computer?",
-      answers: [
-        "To provide a central hub for connecting and coordinating the various hardware components of a computer, such as the CPU, RAM, storage devices, and expansion cards",
-        "To convert the alternating current (AC) from the power outlet into the direct current (DC) required by the computer's components",
-        "To manage the flow of data between the CPU and other hardware components, such as the GPU and network interfaces",
-        "To control the power consumption of the computer and regulate the temperature of its components",
+        "System booting",
+        "Network connection",
+        "Fan control",
+        "Graphics processing",
       ],
     },
   ],
@@ -764,6 +725,9 @@ input[type="submit"] {
     flex-direction: column;
     gap: 4px;
     margin-bottom: 1.1rem;
+  }
+  .availabilities-container input {
+    width: 250px;
   }
 }
 </style>

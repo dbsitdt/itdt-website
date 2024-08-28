@@ -11,7 +11,7 @@
       <credit-card title="Developers" :people="developers"></credit-card>
     </div>
     <div class="credits-container">
-      <credit-card title="Master-in-charge" :people="tic"></credit-card>
+      <credit-card title="Teacher-in-charge" :people="tic"></credit-card>
       <credit-card title="Chairman" :people="chair"></credit-card>
       <credit-card title="Vice Chairmen" :people="vice"></credit-card>
       <credit-card title="Secretary" :people="secretary"></credit-card>
@@ -28,17 +28,12 @@
 const managers = ref(["Owen Tam"]);
 const designers = ref(["Owen Tam"]);
 const developers = ref(["Owen Tam", "Timothy So", "Eddie Hu"]);
-const tic = ref(["Mr. Quintak Lee"]);
+const tic = ref(["Ms. SC Chan", "Mr. KW Wong"]);
 const chair = ref(["Tam Ho Wang"]);
-const vice = ref(["Chen Cheuk Shing", "So Pak Yin"]);
-const secretary = ref(["Fung Man Lok"]);
+const vice = ref(["Zhou Yixuan Richard", "So Pak Yin"]);
+const secretary = ref(["Chen Cheuk Shing"]);
 const treasurer = ref(["Wang Tsun Tang"]);
-const exco = ref([
-  "Lam Wing Kai",
-  "Tong Hei Shun",
-  "Wong Chun Wing Carlos",
-  "Zhou Richard Yixuan",
-]);
+const exco = ref(["Wong Chun Wing Carlos", "Cheng Cheuk Nam"]);
 </script>
 
 <style scoped>
