@@ -37,4 +37,18 @@ export default defineNuxtConfig({
     dbURL: process.env.MONGODB_URL,
     dbPassword: process.env.MONGODB_PASSWORD,
   },
+  nitro: {
+    storage: {
+      shield: {
+        // storage name, you **must** use "shield" as the name
+        driver: "memory",
+      },
+    },
+    experimental: {
+      tasks: true,
+    },
+    scheduledTasks: {
+      "*/15 * * * *": ["shield:clean"], // clean the shield storage every 15 minutes
+    },
+  },
 });
