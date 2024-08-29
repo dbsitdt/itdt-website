@@ -2,7 +2,10 @@
   <base-section>
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
-
+      <p class="disclaimer">
+        If you were redirected by the embedded form in the email, please fill in
+        this form again; Embedded forms are not supported by mobile clients.
+      </p>
       <form action="https://dbsitdt.netlify.app/api/join" method="post">
         <div>
           <label for="fullName">Full Name:</label>
@@ -638,6 +641,9 @@ form {
 h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
+}
+.disclaimer {
+  margin-bottom: 1rem;
 }
 label {
   margin-right: 1rem;
