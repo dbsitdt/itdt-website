@@ -1,3 +1,3 @@
 export default defineEventHandler(function (event) {
-  return sendRedirect(event, "/join");
+  return sendRedirect(event, "/join?failed=true");
 });

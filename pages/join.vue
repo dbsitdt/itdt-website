@@ -2,9 +2,9 @@
   <base-section>
     <div class="form-container" v-if="curAppStatus === 0">
       <h2>Join ITDT for the 24-25 school year!</h2>
-      <p class="disclaimer">
-        If you were redirected by the embedded form in the email, please fill in
-        this form again; Embedded forms are not supported by mobile clients.
+      <p v-if="isFailed" class="disclaimer">
+        Something went wrong with the embedded form. Fill in the below fields
+        again to access the second part of the application.
       </p>
       <form action="https://dbsitdt.netlify.app/api/join" method="post">
         <div>
@@ -407,6 +407,7 @@ let curAppStatus = ref(0);
 // 0 is unknown (not initiated)
 // 1 is on step 2
 // 2 is completed
+const isFailed = ref(false);
 if (uuid) {
   const { data: res } = await useFetch("/api/check?uuid=" + uuid);
   const { appStatus } = res.value;
@@ -420,6 +421,8 @@ if (uuid) {
   }
 } else {
   curAppStatus.value = 0;
+  // Check if failed
+  isFailed.value = route.query.failed;
 }
 
 // for step 2
@@ -644,6 +647,7 @@ h2 {
 }
 .disclaimer {
   margin-bottom: 1rem;
+  color: rgb(255, 99, 99);
 }
 label {
   margin-right: 1rem;
