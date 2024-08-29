@@ -54,7 +54,7 @@
         <h2>Tell us more about yourself</h2>
         <p>Do not share your current application URL with others.</p>
         <p>
-          There is no word limits for the below questions, but you are
+          There are no word limits for the below questions, but you are
           encouraged to write more so we can learn more about you! We recommend
           you write more than 50 words for the first 3 questions.
         </p>
