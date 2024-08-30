@@ -58,16 +58,8 @@
         <p>Do not share your current application URL with others.</p>
         <p>
           There are no word limits for the below questions, but you are
-          encouraged to write more so we can learn more about you! We recommend
-          you write more than 50 words for the first 3 questions.
+          encouraged to write more so we can learn more about you!
         </p>
-        <div>
-          <label for="about"
-            >What do you think ITDT is about? What do we do typically? What
-            achievements have we had?</label
-          >
-          <textarea required name="about" v-model="about"></textarea>
-        </div>
         <div>
           <label for="motivation"
             >Why are you interested in joining the IT Development Team? What do
@@ -426,7 +418,6 @@ if (uuid) {
 }
 
 // for step 2
-const about = ref("");
 const motivation = ref("");
 const experience = ref("");
 const commitments = ref("");
@@ -576,7 +567,6 @@ const answers = computed(() => {
 const canSubmit = computed(() => answers.value.every((answer) => answer));
 const submitForm = async function () {
   const body = {
-    about: about.value,
     motivation: motivation.value,
     experience: experience.value,
     commitments: commitments.value,

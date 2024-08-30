@@ -27,10 +27,6 @@ const appSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    about: {
-      type: String,
-      default: null,
-    },
     motivation: {
       type: String,
       default: null,
