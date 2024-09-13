@@ -30,7 +30,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-
+  ignore: ["pages/join.vue", "server/plugins/connectDB.server.js"],
   modules: ["@pinia/nuxt", "nuxt-api-shield"],
   compatibilityDate: "2024-08-25",
   runtimeConfig: {
