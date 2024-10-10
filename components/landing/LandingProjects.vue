@@ -50,7 +50,7 @@
           </p>
           <BaseCTAButton
             target="_blank"
-            href="https://itdt-codequest.netlify.app/"
+            href="https://dbs-itdt-codequest.netlify.app/"
             >Check it out</BaseCTAButton
           >
         </div>
